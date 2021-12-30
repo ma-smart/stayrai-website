@@ -1,0 +1,4 @@
+main color: 0xff78BDD5
+color 2: 0xffEBFAFF
+color 3: white (FFFFFF)
+color 4: black (000000)

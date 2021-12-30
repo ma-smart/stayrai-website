@@ -1,0 +1,443 @@
+@media (min-width: 319px) and (max-width: 331px) {
+    .background {
+        background-image: url(../assets/images/shapes/header_mixed_full.svg), url(../assets/images/shapes/footer_mixed_full.svg);
+        background-repeat: no-repeat;
+        background-position: top, bottom;
+        background-size: 100% 17%, 100% auto;
+        background-position-y: 0, 100%
+    }
+
+    .mainTitle {
+        color: black;
+    }
+
+    .mainDescription {
+        color: black;
+    }
+
+    .downloadBtns {
+        align-items: center;
+    }
+
+    .logoTitle {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 331px) and (max-width: 454px) {
+    .background {
+        background-image: url(../assets/images/shapes/header_mixed_full.svg), url(../assets/images/shapes/footer_mixed_full.svg);
+        background-repeat: no-repeat;
+        background-position: top, bottom;
+        background-size: 100% 17%, 100% auto;
+        background-position-y: 0, 100%
+    }
+
+    .mainTitle {
+        color: black;
+    }
+
+    .mainDescription {
+        color: black;
+    }
+
+    .downloadBtns {
+        align-items: center;
+    }
+
+    .logoTitle {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 401px) and (max-width: 469px) {
+    .background {
+        background-image: url(../assets/images/shapes/header_mixed_full.svg), url(../assets/images/shapes/footer_mixed_full.svg);
+        background-repeat: no-repeat;
+        background-position: top, bottom;
+        background-size: 100% 18%, 100% auto;
+        background-position-y: 0, 103%
+    }
+
+    .mainTitle {
+        color: black;
+    }
+
+    .mainDescription {
+        color: black;
+    }
+
+    .downloadBtns {
+        align-items: center;
+    }
+
+    .logoTitle {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 470px) and (max-width: 499px) {
+    .background {
+        background-image: url(../assets/images/shapes/header_mixed_full.svg), url(../assets/images/shapes/footer_mixed_full.svg);
+        background-repeat: no-repeat;
+        background-position: top, bottom;
+        background-size: 100% 18%, 100% auto;
+        background-position-y: 0, 105%
+    }
+
+    .mainTitle {
+        color: black;
+    }
+
+    .mainDescription {
+        color: black;
+    }
+
+    .downloadBtns {
+        align-items: center;
+    }
+
+    .logoTitle {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 589px) {
+    .background {
+        background-image: url(../assets/images/shapes/header_mixed_full.svg), url(../assets/images/shapes/footer_mixed_full.svg);
+        background-repeat: no-repeat;
+        background-position: top, bottom;
+        background-size: 180%;
+
+    }
+
+    .mainTitle {
+        color: black;
+    }
+
+    .mainDescription {
+        color: black;
+    }
+
+    .downloadBtns {
+        align-items: center;
+    }
+
+    .logoTitle {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 590px) and (max-width: 684px) {
+    .background {
+        background-image: url(../assets/images/shapes/header_mixed_full.svg), url(../assets/images/shapes/footer_mixed_full.svg);
+        background-repeat: no-repeat;
+        background-position: top, bottom;
+        background-size: 175%;
+
+    }
+
+    .mainTitle {
+        color: black;
+    }
+
+    .mainDescription {
+        color: black;
+    }
+
+    .downloadBtns {
+        align-items: center;
+    }
+
+    .logoTitle {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 685px) and (max-width: 767px) {
+    .background {
+        background-image: url(../assets/images/shapes/header_mixed_full.svg), url(../assets/images/shapes/footer_mixed_full.svg);
+        background-repeat: no-repeat;
+        background-position: top, bottom;
+        background-size: 150%;
+
+    }
+
+    .mainTitle {
+        color: black;
+    }
+
+    .mainDescription {
+        color: black;
+    }
+
+    .downloadBtns {
+        align-items: center;
+    }
+
+    .logoTitle {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 891px) {
+    .background {
+        background-image: url(../assets/images/shapes/header_mixed_full.svg), url(../assets/images/shapes/footer_mixed_full.svg);
+        background-repeat: no-repeat;
+        background-position: top, bottom;
+        background-size: 200%;
+    }
+
+    .twitterImgs {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 892px) and (max-width: 992px) {
+    .background {
+        background-image: url(../assets/images/shapes/header_mixed_full.svg), url(../assets/images/shapes/footer_mixed_full.svg);
+        background-repeat: no-repeat;
+        background-position: top, bottom;
+        background-size: 175%;
+    }
+
+    .twitterImgs {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 993px) and (max-width: 1023px) {
+    .background {
+        background-image: url(../assets/images/shapes/header_mixed_full.svg), url(../assets/images/shapes/footer_mixed_full.svg);
+        background-repeat: no-repeat;
+        background-position: top, bottom;
+        background-size: 150%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 934px) {
+    .midlleDescription p {
+        text-align: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .subscribe {
+        border-radius: 10px;
+        background: #ffffff;
+    }
+
+    .navbar {
+        margin-top: 1rem;
+        margin-left: 2%;
+        display: inline-block;
+        width: 30%;
+        height: 7.3rem;
+    }
+
+    .logo {
+        width: 20rem;
+        height: 6rem;
+        margin-top: 2rem;
+        float: left;
+        position: absolute;
+    }
+
+    .logoTitle {
+        color: white;
+        font-family: 'Nunito';
+        font-weight: 600;
+        font-size: 5rem;
+        position: absolute;
+    }
+
+    .logoDescription {
+        color: white;
+        font-family: Montserrat-Regular, sans-serif;
+        font-size: 1.25rem;
+    }
+
+    .header {
+        margin-right: 3rem;
+    }
+
+    .container-lg {
+        width: 100%;
+    }
+
+    .mainTitle {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .mainDescription {
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .downloadBtns {
+        display: block;
+        margin: 4rem auto 0 auto;
+    }
+
+    .downloadBtns img {
+        display: block;
+        margin: 4rem auto 0 auto;
+        width: 27rem;
+        height: 8.8rem;
+    }
+
+    .middleTitle {
+        margin-bottom: 6rem;
+    }
+
+    .imgPhone {
+        display: block;
+        margin: 6rem auto 0 auto;
+        width: 60%;
+        height: auto;
+    }
+
+    .spots {
+        margin-left: 0;
+    }
+
+    .spot {
+        width: 100%;
+    }
+
+    .spotPhone1,
+    .spotPhone2,
+    .spotPhone3 {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        height: auto;
+    }
+
+    .DescriptionDiv {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        margin-top: -10rem;
+        margin-bottom: 6rem;
+    }
+
+    .help {
+        margin-top: auto;
+    }
+
+    .communities {
+        margin-top: 5rem;
+
+    }
+
+    .midlleDescription {
+        text-align: center;
+        width: 70%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding-right: 0px;
+    }
+
+    .endTitle p {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .endDescription {
+        font-size: 3rem;
+    }
+
+    .footerBox {
+        margin-top: 22rem;
+        padding: auto auto auto auto;
+        text-align: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+        font-size: 1rem;
+
+    }
+
+    .footerBox p {
+        font-weight: bolder;
+        font-size: 3.5rem;
+    }
+
+    .footerBox p a {
+        font-weight: lighter;
+        font-size: 3rem;
+    }
+
+    .endTitle p {
+        font-size: 4rem;
+    }
+
+    .footerGet {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer .row div {
+        margin-bottom: 3.5rem;
+    }
+
+    .divIllustration,
+    .middleIllustration {
+        display: none;
+    }
+
+    .extraInfo {
+        display: none;
+    }
+
+}
+
+@media (max-width: 400px) {
+    .phone {
+        width: 95%;
+        height: 35%;
+        margin-left: 2%;
+    }
+
+    .spots {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .spotPhone1,
+    .spotPhone2,
+    .spotPhone3 {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .footerBox p {
+        font-size: 2.9rem;
+    }
+
+    .footerBox p a {
+        font-size: 2.4rem;
+    }
+
+    .endTitle p {
+        font-size: 2.9rem;
+    }
+}

@@ -1,0 +1,481 @@
+.background {
+    background-image: url(../assets/images/shapes/header_mixed_full.svg), url(../assets/images/shapes/footer_mixed_full.svg);
+    background-repeat: no-repeat;
+    background-position: top, bottom;
+    background-size: 105%;
+}
+
+.spots {
+    margin-top: 100px;
+}
+
+div.spot,
+div#spot1 {
+    background-image: url(../assets/images/shapes/shape1_mixed.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    text-align: center;
+}
+
+div#spot2 {
+    background-image: url(../assets/images/shapes/shape2_mixed.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    text-align: center;
+}
+
+div#spot3 {
+    background-image: url(../assets/images/shapes/shape3_mixed.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    text-align: center;
+}
+
+div#spot4 {
+    background-image: url(../assets/images/shapes/shape4_mixed.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    text-align: center;
+}
+
+div#spot5 {
+    background-image: url(../assets/images/shapes/shape5_mixed.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    text-align: center;
+}
+
+@media (prefers-color-scheme: dark) {}
+
+@media (max-width: 460px) {
+    html {
+        font-size: 4px;
+    }
+
+    .background {
+        background-image: url(../assets/images/shapes/header_mixed_full.svg), url(../assets/images/shapes/footer_mixed_full.svg);
+        background-repeat: no-repeat;
+        background-position: top, bottom;
+        background-size: 125%;
+    }
+}
+
+@media (max-width: 767px) {
+    html {
+        font-size: 6px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 990px) {
+    html {
+        font-size: 6px;
+    }
+}
+
+@media (max-width: 991px) {
+    html {
+        font-size: 8px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    html {
+        font-size: 10px;
+    }
+
+    .background {
+        background-image: url(../assets/images/shapes/header_mixed_full.svg), url(../assets/images/shapes/footer_mixed_full.svg);
+        background-repeat: no-repeat;
+        background-position: top, bottom;
+        background-size: 200%;
+    }
+}
+
+@media (min-width: 1200px) {
+    html {
+        font-size: 12px;
+    }
+
+    .background {
+        background-image: url(../assets/images/shapes/header_mixed_full.svg), url(../assets/images/shapes/footer_mixed_full.svg);
+        background-repeat: no-repeat;
+        background-position: top, bottom;
+        background-size: 200%;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+    .background {
+        background-image: url(../assets/images/shapes/header_mixed_full.svg), url(../assets/images/shapes/footer_mixed_full.svg);
+        background-repeat: no-repeat;
+        background-position: top, bottom;
+        background-size: 175%;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1239px) {
+    .background {
+        background-image: url(../assets/images/shapes/header_mixed_full.svg), url(../assets/images/shapes/footer_mixed_full.svg);
+        background-repeat: no-repeat;
+        background-position: top, bottom;
+        background-size: 150%;
+    }
+}
+
+@media (min-width: 1240px) and (max-width: 1399px) {
+    .background {
+        background-image: url(../assets/images/shapes/header_mixed_full.svg), url(../assets/images/shapes/footer_mixed_full.svg);
+        background-repeat: no-repeat;
+        background-position: top, bottom;
+        background-size: 125%;
+    }
+}
+
+@media (min-width: 1400px) and (max-width: 1509px) {
+    .background {
+        background-image: url(../assets/images/shapes/header_mixed_full.svg), url(../assets/images/shapes/footer_mixed_full.svg);
+        background-repeat: no-repeat;
+        background-position: top, bottom;
+        background-size: 120%;
+    }
+}
+
+
+@media (min-width: 1510px) and (max-width: 1600px) {
+    .background {
+        background-image: url(../assets/images/shapes/header_mixed_full.svg), url(../assets/images/shapes/footer_mixed_full.svg);
+        background-repeat: no-repeat;
+        background-position: top, bottom;
+        background-size: 115%;
+    }
+}
+
+@media (min-width: 1601px) and (max-width: 1799px) {
+    .background {
+        background-image: url(../assets/images/shapes/header_mixed_full.svg), url(../assets/images/shapes/footer_mixed_full.svg);
+        background-repeat: no-repeat;
+        background-position: top, bottom;
+        background-size: 110%;
+    }
+}
+
+@media (min-width: 1800px) and (max-width: 1919px) {
+    .background {
+        background-image: url(../assets/images/shapes/header_mixed_full.svg), url(../assets/images/shapes/footer_mixed_full.svg);
+        background-repeat: no-repeat;
+        background-position: top, bottom;
+        background-size: 105%;
+    }
+}
+
+@media (min-width: 1920px) {
+    .background {
+        background-image: url(../assets/images/shapes/header_mixed_full.svg), url(../assets/images/shapes/footer_mixed_full.svg);
+        background-repeat: no-repeat;
+        background-position: top, bottom;
+        background-size: 105%;
+    }
+}
+
+@font-face {
+    font-family: Montserrat-Bold;
+    src: url(../assets/fonts/Montserrat/Montserrat-Bold.ttf);
+}
+
+@font-face {
+    font-family: Montserrat-SemiBold;
+    src: url(../assets/fonts/Montserrat/Montserrat-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: Montserrat-Regular;
+    src: url(../assets/fonts/Montserrat/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: Nunito-Bold;
+    src: url(../assets/fonts/Nunito/Nunito-Bold.ttf);
+}
+
+@font-face {
+    font-family: Nunito-Light;
+    src: url(assets/fonts/Nunito/Nunito-Light.ttf);
+}
+
+.backgroundDownload {
+    background: #2AB2E2;
+}
+
+
+.subscribe {
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+/*ремы*/
+.navbar {
+    margin-top: 1rem;
+    margin-left: 2%;
+    display: inline-block;
+    width: 30%;
+    height: 7.3rem;
+}
+
+/*ремы*/
+.logo {
+    width: 12rem;
+    float: left;
+}
+
+.logoTitle {
+    color: white;
+    font-family: Nunito, sans-serif;
+    font-weight: 100;
+    font-size: 1.7rem;
+    float: left;
+}
+
+.logoDescription {
+    color: white;
+    font-family: Montserrat-Regular, sans-serif;
+    font-size: 1.25rem;
+}
+
+.header {
+    margin-left: 8%;
+}
+
+.mainTitle {
+    margin-top: 5rem;
+    line-height: 5rem;
+    color: white;
+    font-family: Montserrat-Bold, sans-serif;
+    font-size: 4.2rem;
+}
+
+.mainDescription {
+    line-height: 2.8rem;
+    color: white;
+    font-family: Nunito, sans-serif;
+    font-size: 2rem;
+}
+
+.imgPhone {
+    width: 150%;
+    height: auto;
+    border-radius: 15px;
+    /* box-shadow: 5px 0px 50px 0px rgba(84, 77, 77, 0.15); */
+    /* -webkit-box-shadow: 5px 0px 50px 0px rgba(84, 77, 77, 0.15); */
+    /* -moz-box-shadow: 5px 0px 50px 0px rgba(84, 77, 77, 0.15); */
+}
+
+.downloadBtns {
+    margin-top: 4rem;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: 100;
+}
+
+/*ремы*/
+.downloadBtns img {
+    width: 18rem;
+    height: 6.3rem;
+}
+
+.middleTitle {
+    margin-bottom: 8.3rem;
+    line-height: 6rem;
+    color: black;
+    font-family: Montserrat-Bold, sans-serif;
+    font-size: 4.6rem;
+    width: 100%;
+}
+
+.communities {
+    margin-top: 12rem;
+}
+
+.help {
+    margin-top: 10rem;
+}
+
+.features {
+    margin-top: 23rem;
+}
+
+.TitleOne {
+    margin-top: 12rem;
+    line-height: 4rem;
+    color: black;
+    font-family: Montserrat-Bold, sans-serif;
+    font-size: 3rem;
+}
+
+.DescriptionOne {
+    color: black;
+    line-height: 3.6rem;
+    font-family: Nunito, sans-serif;
+    font-size: 2.5rem;
+}
+
+
+.spotPhone1,
+.spotPhone2,
+.spotPhone3 {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.DescriptionDiv {
+    margin-left: 10%;
+}
+
+.TitleTwo {
+    margin-top: 13rem;
+    line-height: 4rem;
+    color: black;
+    font-family: Montserrat-Bold, sans-serif;
+    font-size: 3rem;
+}
+
+.DescriptionBody {
+    line-height: 3.6rem;
+    color: black;
+    font-family: Nunito, sans-serif;
+    font-size: 2.5rem;
+}
+
+.DescriptionTwo {
+    line-height: 3.6rem;
+    color: black;
+    font-family: Nunito-Light, sans-serif;
+    font-size: 2.5rem;
+}
+
+.TitleThree {
+    margin-top: 9.6rem;
+    line-height: 4rem;
+    color: black;
+    font-family: Montserrat-Bold, sans-serif;
+    font-size: 3rem;
+}
+
+.DescriptionThree {
+    line-height: 3.6rem;
+    color: black;
+    font-family: Nunito-Light, sans-serif;
+    font-size: 2.5rem;
+}
+
+.endDescription {
+    color: black;
+    line-height: 15.6rem;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 2.9rem;
+}
+
+.endDescription:hover {
+    text-decoration: none;
+    color: #00BCFF;
+}
+
+.midlleDescription {
+    line-height: 4.4rem;
+    color: black;
+    font-family: Nunito-Light, sans-serif;
+    font-size: 3.3rem;
+}
+
+.endTitle {
+    line-height: 3.3rem;
+    color: black;
+    font-family: Montserrat-SemiBold, sans-serif;
+    font-size: 5rem;
+}
+
+.middleimgOne {
+    margin-top: 20px;
+    width: 25rem;
+    height: 25.7rem;
+}
+
+.middleimgTwo {
+    margin-top: 20px;
+    width: 27.5rem;
+    height: 25.7rem;
+}
+
+.middleimgThree {
+    margin-top: 20px;
+    width: 29.3rem;
+    height: 25.7rem;
+}
+
+.teletwitter {
+    width: 7.5rem;
+    height: 7.5rem;
+}
+
+.middleIllustration {
+    /* width: 65rem; */
+    height: 20rem;
+}
+
+.footerBox {
+    margin-top: 30rem;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+}
+
+.footer {
+    margin-top: 6.6rem;
+    margin-bottom: 8.3rem;
+    margin-left: 8%;
+}
+
+.footerGet {
+    margin-left: 8%;
+}
+
+.footer img {
+    width: 4.25rem;
+    height: 4rem;
+}
+
+.footerTitle {
+    line-height: 5.8rem;
+    color: black;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 2rem;
+}
+
+.footerDescription {
+    line-height: 2.9rem;
+    color: black;
+    font-family: Nunito-Light, sans-serif;
+    font-size: 2rem;
+}
+
+.footerMenuElement {
+    line-height: 2.9rem;
+    color: black;
+    font-family: Nunito-Light, sans-serif;
+    font-size: 2rem;
+}
+
+.footerMenuElement sup {
+    font-size: 1.25rem;
+    vertical-align: 0.8rem;
+}
+
+.footerMenuElement:hover {
+    text-decoration-line: underline;
+    color: #000;
+}

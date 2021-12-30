@@ -30,7 +30,6 @@
 
     <link rel="icon" type="image/png" href="assets/images/logos/logo_noback.png" />
 
-
     <link rel="stylesheet" type="text/css" href="https://kenwheeler.github.io/slick/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="https://kenwheeler.github.io/slick/slick/slick-theme.css" />
 
@@ -70,9 +69,30 @@
             scroll-behavior: smooth;
         }
 
+        table.GeneratedTable {
+            text-align: center;
+            vertical-align: middle;
+            width: 100%;
+            background-color: #ffffff;
+            border-collapse: collapse;
+            border-width: 2px;
+            border-color: #fff;
+            border-style: solid;
+            color: #000000;
+        }
+
+        table.GeneratedTable td,
+        table.GeneratedTable th {
+            padding: 5px;
+        }
+
+        table.GeneratedTable thead {
+            background-color: #ffffff;
+        }
+
         .app_ss {
             border-radius: 10px;
-            width: 60%;
+            width: 100%;
             height: 100%;
         }
 
@@ -83,18 +103,18 @@
         }
 
         .pricing-table-wrapper {
-            max-width: 100rem;
-            max-height: 70rem;
+            max-width: 80rem;
+            max-height: 50rem;
             margin: 0 auto;
         }
 
         .pricing-table {
             --pricing-table-color: #78BDD5;
-            display: grid;
+            display: block;
             grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
             grid-gap: 2em;
             margin: 0 auto;
-            padding: 4;
+            padding: 1;
             list-style-type: none;
         }
 
@@ -103,14 +123,17 @@
             flex-direction: column;
             align-items: center;
             background-color: #fff;
-            padding: 2em;
+            padding: 1em;
             border-radius: 1.5em;
+            border-color: #000;
             transition: box-shadow 200ms cubic-bezier(0.02, 0.01, 0.47, 1), transform 200ms cubic-bezier(0.02, 0.01, 0.47, 1);
             margin: 20px;
+            list-style-position: inside;
+            border: 0.5px solid rgb(212, 212, 212);
         }
 
         .pricing-table__item:hover {
-            box-shadow: 0 40px 40px #EBFAFF;
+            box-shadow: 0 10px 10px #78BDD5;
         }
 
         .pricing-table__item--popular {
@@ -130,16 +153,22 @@
         }
 
         .pricing-table__img {
-            margin: 2.5em auto 4em;
+            margin: 2em auto 2em;
             width: 100%;
+            height: 100%;
         }
 
         .pricing-table__title {
             margin: 0;
-            font-size: 2em;
+            font-size: 3em;
             text-transform: capitalize;
             text-align: center;
-            font-family: Nunito;
+            font-weight: bold;
+            color: #78BDD5;
+            background: -webkit-linear-gradient(#EBFAFF, #78BDD5);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .pricing-table__description {
@@ -153,7 +182,7 @@
         .pricing-table__tagline {
             margin: 0;
             font-size: medium;
-            color: #9ea0a3;
+            color: #000;
             text-align: center;
             font-family: Nunito;
         }
@@ -184,6 +213,9 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            text-align: center;
+            font-size: 1.2em;
+
         }
 
         .pricing-table__product {
@@ -226,7 +258,7 @@
         }
 
         .pricing-table__button {
-            background: var(--pricing-table-color);
+            /* background: var(--pricing-table-color);
             color: #fff;
             margin-top: auto;
             padding: 1em 2em;
@@ -235,19 +267,51 @@
             border-radius: 1.87em;
             text-align: center;
             transition: background 0.2s ease-in-out;
-            text-transform: capitalize;
+            text-transform: capitalize; */
         }
 
-        .pricing-table__button:hover {
+        /* .pricing-table__button:hover {
             background-color: #EBFAFF;
+        } */
+
+        .pricing-table__checkbox {
+            background-color: red;
         }
 
-        input[type="checkbox"]:disabled+label::before {
-            background: red;
+        input[type="checkbox"]:disabled {
+            appearance: none;
+            background-color: #fff;
+            margin: 0;
+            font: inherit;
+            color: currentColor;
+            width: 1.5em;
+            height: 1.5em;
+            border: 0.05em solid #78BDD5;
+            border-radius: 0.15em;
+            transform: translateY(-0.075em);
+
         }
 
-        input[type="checkbox"]:disabled+label {
-            color: red;
+        .checkmark {
+            display: inline-block;
+            height: 30px;
+            width: 15px;
+            border-bottom: 5px solid #78BDD5;
+            border-right: 5px solid #78BDD5;
+            transform: rotate(45deg);
+        }
+
+        input[type="checkbox"] {
+            appearance: none;
+            background-color: #fff;
+            margin: 0;
+            font: inherit;
+            color: currentColor;
+            width: 1.5em;
+            height: 1.5em;
+            border: 0.05em solid #78BDD5;
+            border-radius: 0.15em;
+            transform: translateY(-0.075em);
         }
 
         .hEKdsk.section-9,
@@ -428,21 +492,23 @@
         <!-- Section I: Hate Water changes? -->
         <div class="spots row justify-content-md-end justify-content-lg-end mb-5">
             <div id="spot1" class="spot col-xs-12 col-md-5 col-lg-5 order-xs-1 order-sm-1 order-md-2 order-lg-2">
-                <img class="app_ss" src="assets/images/shapes/manual_change.svg">
+                <img class="shape_ss" src="assets/images/illustrations/manual_change.svg">
             </div>
             <div id="DescriptionDiv2"
                 class="DescriptionDiv col-xs-12 col-md-5 col-lg-5 order-xs-2 order-sm-2 order-md-1 order-lg-1">
                 <h3 class="TitleTwo">Hate water changes?</h3>
-                <p class="DescriptionBody col-xs-12 col-md-10 col-lg-10 p-0">Let StayrAI automatically change it for you!
+                <p class="DescriptionBody col-xs-12 col-md-10 col-lg-10 p-0">Let StayrAI automatically change it for
+                    you!
                 </p>
             </div>
         </div>
-        <br/><br/>
+        <br /><br />
 
         <!-- Section II: Worried about your fish tank while travelling? -->
         <div class="spots row justify-content-md-center mb-5">
-            <div id= "spot2" class="spot col-xs-12 col-md-5 col-lg-5">
-                <img class="app_ss" src="assets/images/screenshots/homepage2.png" class="img-responsive">
+            <div id="spot2" class="spot col-xs-12 col-md-5 col-lg-5">
+                <img class="shape_ss" src="assets/images/illustrations/worried_traveller_thinner.svg"
+                    class="img-responsive">
             </div>
             <div class="DescriptionDiv col-xs-12 col-md-5 col-lg-5">
                 <h3 class="TitleOne">Worried about your fish tank while travelling?</h3>
@@ -450,26 +516,27 @@
                     anywhere</p>
             </div>
         </div>
-        <br/><br/>
+        <br /><br />
 
-        <!-- Section III: Lost your pets to diseases or missed maintenance? -->            
+        <!-- Section III: Lost your pets to diseases or missed maintenance? -->
         <div class="spots row justify-content-md-end justify-content-lg-end mb-5">
             <div id="spot3" class="spot col-xs-12 col-md-5 col-lg-5 order-xs-1 order-sm-1 order-md-2 order-lg-2">
-                <img class="app_ss" src="assets/images/screenshots/homepage.png">
+                <img class="shape_ss" src="assets/images/illustrations/diseases.svg">
             </div>
             <div id="DescriptionDiv2"
                 class="DescriptionDiv col-xs-12 col-md-5 col-lg-5 order-xs-2 order-sm-2 order-md-1 order-lg-1">
                 <h3 class="TitleTwo">Lost your pets to diseases or missed maintenance?</h3>
-                <p class="DescriptionBody col-xs-12 col-md-10 col-lg-10 p-0">StayrAI uses AI to diagnose issues with your
+                <p class="DescriptionBody col-xs-12 col-md-10 col-lg-10 p-0">StayrAI uses AI to diagnose issues with
+                    your
                     setup and warn you in time.</p>
             </div>
         </div>
-        <br/><br/>
+        <br /><br />
 
-         <!-- Section IV: Providing the perfect environment for your pets is a hassle? -->            
+        <!-- Section IV: Providing the perfect environment for your pets is a hassle? -->
         <div class="spots row justify-content-md-center mb-5">
             <div id="spot4" class="spot col-xs-12 col-md-5 col-lg-5">
-                <img class="app_ss" src="assets/images/screenshots/aquarium_state_temp.png">
+                <img class="shape_ss" src="assets/images/illustrations/newbie_keeper_edited_thinner.svg">
             </div>
             <div class="DescriptionDiv col-xs-12 col-md-5 col-lg-5">
                 <h3 class="TitleThree">Providing the perfect environment for your pets is a hassle?</h3>
@@ -477,346 +544,483 @@
                     in perfect condition for your pets.</p>
             </div>
         </div>
-        <br/><br/>
+        <br /><br />
 
-        <!-- Section V: Need a sumper simple way to interact with your tank? -->
-        <div class="spots row justify-content-md-end justify-content-lg-end">
-            <div id="spot5" class="spot col-xs-12 col-md-5 col-lg-5 order-xs-1 order-sm-1 order-md-2 order-lg-2">
-                <img class="app_ss" src="assets/images/screenshots/aquarium_state_temp.png">
-            </div>
-            <div id="DescriptionDiv2"
-                class="DescriptionDiv col-xs-12 col-md-5 col-lg-5 order-xs-2 order-sm-2 order-md-1 order-lg-1">
-                <h3 class="TitleTwo">Need a super simple way to interact with your tank?</h3>
-                <p class="DescriptionBody col-xs-12 col-md-10 col-lg-10 p-0">StayrAI supports a user-friendly app for
-                    Android and iOS devices</p>
-            </div>
-        </div>
-    </div>
-    <br/><br/>
+        <script>
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 3
+                    },
+                    1000: {
+                        items: 5
+                    }
+                }
+            })
+        </script>
 
-    <!-- StayrAI is Awesome -->
-    <div class="container-xl help">
-        <h2 class="middleTitle text-center">StayrAI is awesome!!</h2>
-        <div class="row justify-content-md-center">
-            <div class="col-xs-12 col-md-12">
-                <ul class="DescriptionBody">
-                    <li>Super slick design</li>
-                    <li>Best hardware in the market</li>
-                    <li>Ships with two high-quality dosing pumps</li>
-                    <li>High-quality pH and ORP probes for sustainable monitoring</li>
-                    <li>Utilizes state-of-the-art AI and image processing technologies</li>
-                    <li>Comes in three variations that fit your needs</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <br/><br/>
-
-    <div class="container-xl help" id="get_yours_now">
-        <h2 class="middleTitle text-center">Choose your StayrAI</h2>
-        <div class="row justify-content-md-center">
-            <div class="col-xs-12 col-md-12">
-                <!-- <div class="responsive"> -->
-                <!-- <div>your content 1</div>
-                    <div>your content 2</div>
-                    <div>your content 3</div>
-                    <div>your content 4</div>
-                    <div>your content 5</div>
-                  </div> -->
+        <!-- StayrAI is Awesome -->
+        <div class="container">
+            <h2 class="middleTitle text-center">StayrAI is here for you!</h2>
+            <div class="row justify-content-md-center mb-5">
+                <div class="col-xs-12 col-md-5 col-lg-12">
+                    <ul class="DescriptionBody">
+                        <li>Super slick design</li>
+                        <li>Best hardware in the market</li>
+                        <li>Ships with two high-quality dosing pumps</li>
+                        <li>High-quality pH and ORP probes for sustainable monitoring</li>
+                        <li>Utilizes state-of-the-art AI and image processing technologies</li>
+                        <li>Comes in three variations that fit your needs</li>
+                        <li>Supports a user-friendly app for Android and iOS devices</li>
+                    </ul>
+                </div>
                 <div class="pricing-table-wrapper">
                     <ul class="pricing-table">
                         <li class="pricing-table__item">
-                            <img src="assets/images/logos/rein_main.png" alt="" class="pricing-table__img" />
-                            <h3 class="pricing-table__title">Rein</h3>
-                            <p class="pricing-table__description">
-                                <span class="pricing-table__tagline">Suitable for hobbyists</span>
-                                <span class="pricing-table__price">€400</span>
-                            </p>
-                            <ul class="pricing-table__products">
-                                <li class=""> <input type="checkbox" name="" value="" checked disabled> &nbsp;1
-                                    Automated Water Change</li>
-                                <li class=""> <input type="checkbox" name="" value="" checked disabled> &nbsp;1 App
-                                    Support & Notifications</li>
-                                <li class=""> <input type="checkbox" name="" value="" checked disabled> &nbsp;1
-                                    WiFi,Hotspot, & Repeater</li>
-                                <li class=""> <input type="checkbox" name="" value="" checked disabled> &nbsp;1
-                                    Automatic Top Off(ATO)</li>
-                                <li class=""> <input type="checkbox" name="" value="" disabled> &nbsp; Cloud Access</li>
-                                <li class=""> <input type="checkbox" name="" value="" disabled> &nbsp; Camera Monitoring
-                                </li>
-                                <li class=""> <input type="checkbox" name="" value="" checked disabled> &nbsp;1 Dosing
-                                    Pumps</li>
-                                <li class=""> <input type="checkbox" name="" value="" checked disabled> &nbsp;2
-                                    Temperature Sensors</li>
-                                <li class=""> <input type="checkbox" name="" value="" checked disabled> &nbsp;4 Smart
-                                    Power Plugs</li>
-                                <li class=""> <input type="checkbox" name="" value="" disabled> &nbsp; Sustainable pH
-                                    Monitoring</li>
-                                <li class=""> <input type="checkbox" name="" value="" disabled> &nbsp; Sustainable ORP
-                                    Monitoring</li>
-                                <li class=""> <input type="checkbox" name="" value="" disabled> &nbsp; AI Diagnosis &
-                                    Prediction</li>
-                            </ul>
-                            <p class="text-center">
-
-                                <a href="#reserve_now" data-name="Hobbyists" class="btn btn-info btn-lg">Get Yours
-                                    Now</a>
-                            </p>
+                            <img src="assets/images/screenshots/loginpage.png" alt="" class="app_ss" />
                         </li>
-                        <li class="pricing-table__item pricing-table__item--popular">
-                            <img src="assets/images/logos/unicorn_main.png" alt="" class="pricing-table__img" />
-                            <h3 class="pricing-table__title">Unicorn</h3>
-                            <p class="pricing-table__description">
-                                <span class="pricing-table__tagline">Suitable for enthusiasts</span>
-                                <span class="pricing-table__price">€600</span>
-                            </p>
-                            <ul class="pricing-table__products">
-                                <li class=""> <input type="checkbox" name="" value="" checked disabled> &nbsp;1
-                                    Automated Water Change</li>
-                                <li class=""> <input type="checkbox" name="" value="" checked disabled> &nbsp;1 App
-                                    Support & Notifications</li>
-                                <li class=""> <input type="checkbox" name="" value="" checked disabled> &nbsp;1
-                                    WiFi,Hotspot, & Repeater</li>
-                                <li class=""> <input type="checkbox" name="" value="" checked disabled> &nbsp;1
-                                    Automatic Top Off(ATO)</li>
-                                <li class=""> <input type="checkbox" name="" value="" checked disabled> &nbsp;1 Cloud
-                                    Access</li>
-                                <li class=""> <input type="checkbox" name="" value="" disabled> &nbsp; Camera Monitoring
-                                </li>
-                                <li class=""> <input type="checkbox" name="" value="" checked disabled> &nbsp;1 Dosing
-                                    Pumps</li>
-                                <li class=""> <input type="checkbox" name="" value="" checked disabled> &nbsp;3
-                                    Temperature Sensors</li>
-                                <li class=""> <input type="checkbox" name="" value="" checked disabled> &nbsp;4 Smart
-                                    Power Plugs</li>
-                                <li class=""> <input type="checkbox" name="" value="" checked disabled> &nbsp;1
-                                    Sustainable pH Monitoring</li>
-                                <li class=""> <input type="checkbox" name="" value="" disabled> &nbsp; Sustainable ORP
-                                    Monitoring</li>
-                                <li class=""> <input type="checkbox" name="" value="" disabled> &nbsp; AI Diagnosis &
-                                    Prediction</li>
-                            </ul>
-                            <p class="text-center">
-
-                                <a href="#reserve_now" data-name="Enthusiasts" class="btn btn-info btn-lg">Get Yours
-                                    Now</a>
-                            </p>
+                        <li class="pricing-table__item">
+                            <img src="assets/images/screenshots/homepage.png" alt="" class="app_ss" />
                         </li>
-                        <li class="pricing-table__item pricing-table__item--popular">
-                            <img src="assets/images/logos/boese_main.png" alt="" class="pricing-table__img" />
-                            <h3 class="pricing-table__title">Böse</h3>
-                            <p class="pricing-table__description">
-                                <span class="pricing-table__tagline">Suitable for fish freaks</span>
-                                <span class="pricing-table__price">€800</span>
-                            </p>
-                            <ul class="pricing-table__products">
-                                <li class=""> <input type="checkbox" name="" value="" checked disabled> &nbsp;1
-                                    Automated Water Change</li>
-                                <li class=""> <input type="checkbox" name="" value="" checked disabled> &nbsp;1 App
-                                    Support & Notifications</li>
-                                <li class=""> <input type="checkbox" name="" value="" checked disabled> &nbsp;1
-                                    WiFi,Hotspot, & Repeater</li>
-                                <li class=""> <input type="checkbox" name="" value="" checked disabled> &nbsp;1
-                                    Automatic Top Off(ATO)</li>
-                                <li class=""> <input type="checkbox" name="" value="" checked disabled> &nbsp;1 Cloud
-                                    Access</li>
-                                <li class=""> <input type="checkbox" name="" value="" checked disabled> &nbsp;1 Camera
-                                    Monitoring</li>
-                                <li class=""> <input type="checkbox" name="" value="" checked disabled> &nbsp;6 Dosing
-                                    Pumps</li>
-                                <li class=""> <input type="checkbox" name="" value="" checked disabled> &nbsp;4
-                                    Temperature Sensors</li>
-                                <li class=""> <input type="checkbox" name="" value="" checked disabled> &nbsp;8 Smart
-                                    Power Plugs</li>
-                                <li class=""> <input type="checkbox" name="" value="" checked disabled> &nbsp;1
-                                    Sustainable pH Monitoring</li>
-                                <li class=""> <input type="checkbox" name="" value="" checked disabled> &nbsp;1
-                                    Sustainable ORP Monitoring</li>
-                                <li class=""> <input type="checkbox" name="" value="" checked disabled> &nbsp;1 AI
-                                    Diagnosis & Prediction</li>
-                            </ul>
-                            <p class="text-center">
-
-                                <a href="#reserve_now" data-name="Fish Freak" class="btn btn-info btn-lg">Get Yours
-                                    Now</a>
-                            </p>
+                        <li class="pricing-table__item">
+                            <img src="assets/images/screenshots/aquarium_state_temp.png" alt="" class="app_ss" />
                         </li>
-
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="container-lg communities" id="reserve_now">
-            <h2 class="middleTitle text-center">Reserve your unit now</h2>
-            <div class="row justify-content-md-end">
-                <div class="midlleDescription col-xs-12 col-md-5 col-lg-5 pl-0">
-
-                    <form>
-                        <fieldset class="form-group">
-                            <!-- <label for="exampleInputEmail1">Email address</label> -->
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                placeholder="Enter your email*" required>
-                        </fieldset>
-                        <fieldset class="form-group">
-                            <select class="form-control" id="p_variation">
-                                <option>Select your Variation</option>
-                                <option value="Hobbyists">Hobbyists</option>
-                                <option value="Enthusiasts">Enthusiasts</option>
-                                <option value="Fish Freak">Fish Freak</option>
-                            </select>
-                        </fieldset>
-                        <div class="g-recaptcha" data-sitekey="6Lepj8UdAAAAAMVKVPmjiO9xq9evE5NunMvG1Pqe"></div>
-                        <br />
-                        <button type="submit" class="btn btn-info">Let me Know</button>
-                    </form>
-                </div>
-                <div class="divIllustration col-md-7 col-lg-7 text-center">
-                    <img class="middleIllustration" src="img/reserve-img.png" />
-                </div>
-            </div>
-        </div>
-        <div class="communities pages__Section-sc-1mfsc9f-0 hEKdsk section-7 limited">
-            <!-- <h2 class="title">Our team</h2> -->
-
-            <h2 class="middleTitle text-center">Our team</h2>
-            <div class="section-images">
-                <div class="TeamMember__TeamMemberWrapper-hd36ql-0 cyIwMS section-8-item bg-0">
-                    <img class="team-member-img" src="img/224.png" alt="">
-                    <div class="team-member-name">Darius Kozlovskis</div>
-                    <div class="team-member-title">Founder</div>
-                    <a href="https://www.linkedin.com/in/dariuskozlovskis" target="_blank" rel="noopener noreferrer">
-                        <img class="team-member-social" src="img/linkedin-blue.png" alt="">
-                    </a>
-                </div>
-                <div class="TeamMember__TeamMemberWrapper-hd36ql-0 cyIwMS section-8-item bg-0">
-                    <img class="team-member-img" src="img/224.png" alt="">
-                    <div class="team-member-name">Darius Kozlovskis</div>
-                    <div class="team-member-title">Founder</div>
-                    <a href="https://www.linkedin.com/in/dariuskozlovskis" target="_blank" rel="noopener noreferrer">
-                        <img class="team-member-social" src="img/linkedin-blue.png" alt="">
-                    </a>
-                </div>
-                <div class="TeamMember__TeamMemberWrapper-hd36ql-0 cyIwMS section-8-item bg-0">
-                    <img class="team-member-img" src="img/224.png" alt="">
-                    <div class="team-member-name">Darius Kozlovskis</div>
-                    <div class="team-member-title">Founder</div>
-                    <a href="https://www.linkedin.com/in/dariuskozlovskis" target="_blank" rel="noopener noreferrer">
-                        <img class="team-member-social" src="img/linkedin-blue.png" alt="">
-                    </a>
-                </div>
-                <div class="TeamMember__TeamMemberWrapper-hd36ql-0 cyIwMS section-8-item bg-0">
-                    <img class="team-member-img" src="img/224.png" alt="">
-                    <div class="team-member-name">Darius Kozlovskis</div>
-                    <div class="team-member-title">Founder</div>
-                    <a href="https://www.linkedin.com/in/dariuskozlovskis" target="_blank" rel="noopener noreferrer">
-                        <img class="team-member-social" src="img/linkedin-blue.png" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid footerBox">
-            <div class="row footerGet">
-                <div class="endTitle">
-                    <div>
-                        <p class="row">Get the StayrAI now!</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row footer">
-                <div class="extraInfo col-xs-12 col-md-4">
-                    <!-- <img src="img/footer-logo.svg"> -->
-                    <h2>LOGO</h2>
-                    <p class="footerDescription mt-3">α version‎</p>
-                    <p class="footerDescription">Ethereum, Bitcoin, ERC20<sup>soon</sup></p>
-                </div>
-                <div class="col-xs-12 col-md-8">
-                    <div class="row">
-                        <div class="col-md-4 p-0">
-                            <p class="footerTitle">About</p>
-                            <p><a target="_blank" rel="noopener noreferrer" class="footerMenuElement"
-                                    href="https://medium.com/StayrAI">FAQ</a></p>
-                            <p><a target="_blank" rel="noopener noreferrer" class="footerMenuElement"
-                                    href="https://medium.com/StayrAI">Blog</a></p>
-                        </div>
-                        <div class="col-xs-12 col-md-8 p-0">
-                            <p class="footerTitle">New Releases</p>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-md-12 text-center social-menu mt-5">
-                    <ul>
-                        <li>
-                            <a href="https://github.com" target="blank"><i class="fab fa-github"></i></a>
+                        <li class="pricing-table__item">
+                            <img src="assets/images/screenshots/aquarium_state_water.png" alt="" class="app_ss" />
                         </li>
-                        <li>
-                            <a href="https://www.instagram.com/" target="blank"><i class="fab fa-instagram"></i></a>
+                        <li class="pricing-table__item">
+                            <img src="assets/images/screenshots/schedulepage.png" alt="" class="app_ss" />
                         </li>
-                        <li>
-                            <a href="https://www.linkedin.com/" target="blank"><i class="fab fa-linkedin-in"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://codepen.io"><i class="fab fa-codepen" target="blank"></i></a>
+                        <li class="pricing-table__item">
+                            <img src="assets/images/screenshots/addschedule.png" alt="" class="app_ss" />
                         </li>
                     </ul>
-
                 </div>
+
+
             </div>
         </div>
-        <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
-        <script src="https://kit.fontawesome.com/66aa7c98b3.js" crossorigin="anonymous"></script>
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-        <script type="text/javascript">
-            $(document).ready(function () {
+        <br /><br />
 
-                $(document.body).on('click', '.pricing-table__button', function (event) {
-                    // event.preventDefault();
-                    /* Act on the event */
-                    var p_name = $(this).data('name');
-                    // alert(p_name);
-                    $('#p_variation').val(p_name);
-                });
+        <div class="container-xl help" id="get_yours_now">
+            <h2 class="middleTitle text-center">Choose your StayrAI</h2>
+            <div class="row justify-content-lg-center">
+                <div class="">
+                    <table class="GeneratedTable">
+                        <colgroup>
+                            <col style="width: 19%;" />
+                            <col style="width: 27%;" />
+                            <col style="width: 27%;" />
+                            <col style="width: 27%;" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th><img src="assets/images/logos/rein_main.png" alt="" class="pricing-table__img" />
+                                </th>
+                                <th><img src="assets/images/logos/unicorn_main.png" alt="" class="pricing-table__img" />
+                                </th>
+                                <th><img src="assets/images/logos/boese_main.png" alt="" class="pricing-table__img" />
+                                </th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <h3 class="pricing-table__title">Rein</h3>
+                            </td>
+                            <td>
+                                <h3 class="pricing-table__title">Unicorn</h3>
+                            </td>
+                            <td>
+                                <h3 class="pricing-table__title">Böse</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <p class="pricing-table__description">
+                                    <span class="pricing-table__tagline">FOR HOBBYISTS</span>
+                                </p>
+                            </td>
+                            <td>
+                                <p class="pricing-table__description">
+                                    <span class="pricing-table__tagline">FOR ENTHUSIASTS</span>
+                                </p>
+                            </td>
+                            <td>
+                                <p class="pricing-table__description">
+                                    <span class="pricing-table__tagline">FOR FISH FREAKS</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>Automated Water Change</td>
+                            <td>
+                                <div class="checkmark"></div>
+                            </td>
+                            <td>
+                                <div class="checkmark"></div>
+                            </td>
+                            <td>
+                                <div class="checkmark"></div>
+                            </td>
+                        </tr>
+                        <tr id="borderTR">
+                            <td>App Support &amp; Notifications</td>
+                            <td>
+                                <div class="checkmark"></div>
+                            </td>
+                            <td>
+                                <div class="checkmark"></div>
+                            </td>
+                            <td>
+                                <div class="checkmark"></div>
+                            </td>
+                        </tr>
+                        <tr id="borderTR">
+                            <td>WiFi Hotspot &amp; Repeater</td>
+                            <td>
+                                <div class="checkmark"></div>
+                            </td>
+                            <td>
+                                <div class="checkmark"></div>
+                            </td>
+                            <td>
+                                <div class="checkmark"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Automatic Top-Off (ATO)</td>
+                            <td>
+                                <div class="checkmark"></div>
+                            </td>
+                            <td>
+                                <div class="checkmark"></div>
+                            </td>
+                            <td>
+                                <div class="checkmark"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cloud Access</td>
+                            <td>
+                                <div class=""></div>
+                            </td>
+                            <td>
+                                <div class="checkmark"></div>
+                            </td>
+                            <td>
+                                <div class="checkmark"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Camera Monitoring</td>
+                            <td>
+                                <div class=""></div>
+                            </td>
+                            <td>
+                                <div class=""></div>
+                            </td>
+                            <td>
+                                <div class="checkmark"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Dosing Pumps</td>
+                            <td>
+                                <h4>1</h4>
+                            </td>
+                            <td>
+                                <h4>1</h4>
+                            </td>
+                            <td>
+                                <h4>6</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Temperature Sensors</td>
+                            <td>
+                                <h4>2</h4>
+                            </td>
+                            <td>
+                                <h4>3</h4>
+                            </td>
+                            <td>
+                                <h4>4</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Smart Power Plugs</td>
+                            <td>
+                                <h4>4</h4>
+                            </td>
+                            <td>
+                                <h4>4</h4>
+                            </td>
+                            <td>
+                                <h4>8</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Sustainable pH Monitoring</td>
+                            <td>
+                                <div class=""></div>
+                            </td>
+                            <td>
+                                <div class="checkmark"></div>
+                            </td>
+                            <td>
+                                <div class="checkmark"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Sustainable ORP Monitoring</td>
+                            <td>
+                                <div class=""></div>
+                            </td>
+                            <td>
+                                <div class=""></div>
+                            </td>
+                            <td>
+                                <div class="checkmark"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>AI Diagnosis &amp; Prediction</td>
+                            <td>
+                                <div class=""></div>
+                            </td>
+                            <td>
+                                <div class=""></div>
+                            </td>
+                            <td>
+                                <div class="checkmark"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <p class="text-center"> <span class="pricing-table__price">€400</span>
+                                </p>
+                            </td>
+                            <td>
+                                <p class="text-center"> <span class="pricing-table__price">€600</span>
+                                </p>
+                            </td>
+                            <td>
+                                <p class="text-center"> <span class="pricing-table__price">€800</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <p class="text-center">
+                                    <a href="#reserve_now" data-name="Rein" class="pricing-table__button btn btn-info btn-lg"
+                                        style="font-family: Nunito;">Get Yours
+                                        Now</a>
+                                </p>
+                            </td>
+                            <td>
+                                <p class="text-center">
+                                    <a href="#reserve_now" data-name="Unicorn" class="pricing-table__button btn btn-info btn-lg"
+                                        style="font-family: Nunito;">Get Yours
+                                        Now</a>
+                                </p>
+                            </td>
+                            <td>
+                                <p class="text-center">
+                                    <a href="#reserve_now" data-name="Boese" class="pricing-table__button btn btn-info btn-lg"
+                                        style="font-family: Nunito;">Get Yours
+                                        Now</a>
+                                </p>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!-- Codes by Quackit.com -->
 
-                $('.pricing-table').slick({
-                    dots: true,
-                    infinite: false,
-                    speed: 300,
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    responsive: [{
-                            breakpoint: 1024,
-                            settings: {
-                                slidesToShow: 3,
-                                slidesToScroll: 3,
-                                infinite: true,
-                                dots: true
-                            }
-                        },
-                        {
-                            breakpoint: 600,
-                            settings: {
-                                slidesToShow: 2,
-                                slidesToScroll: 2
-                            }
-                        },
-                        {
-                            breakpoint: 480,
-                            settings: {
-                                slidesToShow: 1,
-                                slidesToScroll: 1
-                            }
-                        }
-                        // You can unslick at a given breakpoint now by adding:
-                        // settings: "unslick"
-                        // instead of a settings object
-                    ]
-                });
-            });
-        </script>
+                </div>
+                <div class="container-lg communities" id="reserve_now">
+                    <h2 class="middleTitle text-center">Reserve your unit now</h2>
+                    <div class="row justify-content-md-end">
+                        <div class="midlleDescription col-xs-12 col-md-5 col-lg-5 pl-0">
+
+                            <form>
+                                <fieldset class="form-group">
+                                    <!-- <label for="exampleInputEmail1">Email address</label> -->
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                        placeholder="Enter your email*" required>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <select class="form-control" id="p_variation">
+                                        <option>Select your Variation</option>
+                                        <option value="Rein">Rein - Hobbyists</option>
+                                        <option value="Unicorn">Unicorn - Enthusiasts</option>
+                                        <option value="Boese">Böse - Fish Freak</option>
+                                    </select>
+                                </fieldset>
+                                <div class="g-recaptcha" data-sitekey="6Lepj8UdAAAAAMVKVPmjiO9xq9evE5NunMvG1Pqe"></div>
+                                <br />
+                                <button type="submit" class="btn btn-info btn-lg" style="font-family: Nunito;">Let me
+                                    Know</button>
+                            </form>
+                        </div>
+                        <div class="divIllustration col-md-7 col-lg-7 text-center">
+                            <img class="middleIllustration" src="assets/images/logos/rein_main.png" />
+                        </div>
+                    </div>
+                </div>
+                <div class="communities pages__Section-sc-1mfsc9f-0 hEKdsk section-7 limited">
+                    <!-- <h2 class="title">Our team</h2> -->
+
+                    <h2 class="middleTitle text-center">Our team</h2>
+                    <div class="section-images">
+                        <div class="TeamMember__TeamMemberWrapper-hd36ql-0 cyIwMS section-8-item bg-0">
+                            <img class="team-member-img" src="img/224.png" alt="">
+                            <div class="team-member-name">Darius Kozlovskis</div>
+                            <div class="team-member-title">Founder</div>
+                            <a href="https://www.linkedin.com/in/dariuskozlovskis" target="_blank"
+                                rel="noopener noreferrer">
+                                <img class="team-member-social" src="img/linkedin-blue.png" alt="">
+                            </a>
+                        </div>
+                        <div class="TeamMember__TeamMemberWrapper-hd36ql-0 cyIwMS section-8-item bg-0">
+                            <img class="team-member-img" src="img/224.png" alt="">
+                            <div class="team-member-name">Darius Kozlovskis</div>
+                            <div class="team-member-title">Founder</div>
+                            <a href="https://www.linkedin.com/in/dariuskozlovskis" target="_blank"
+                                rel="noopener noreferrer">
+                                <img class="team-member-social" src="img/linkedin-blue.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid footerBox">
+                    <div class="row footerGet">
+                        <div class="endTitle">
+                            <div>
+                                <p class="row">Get the StayrAI now!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row footer">
+                        <div class="extraInfo col-xs-12 col-md-4">
+                            <!-- <img src="img/footer-logo.svg"> -->
+                            <h2>LOGO</h2>
+                            <p class="footerDescription mt-3">α version‎</p>
+                            <p class="footerDescription">Ethereum, Bitcoin, ERC20<sup>soon</sup></p>
+                        </div>
+                        <div class="col-xs-12 col-md-8">
+                            <div class="row">
+                                <div class="col-md-4 p-0">
+                                    <p class="footerTitle">About</p>
+                                    <p><a target="_blank" rel="noopener noreferrer" class="footerMenuElement"
+                                            href="https://medium.com/StayrAI">FAQ</a></p>
+                                    <p><a target="_blank" rel="noopener noreferrer" class="footerMenuElement"
+                                            href="https://medium.com/StayrAI">Blog</a></p>
+                                </div>
+                                <div class="col-xs-12 col-md-8 p-0">
+                                    <p class="footerTitle">New Releases</p>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-12 text-center social-menu mt-5">
+                            <ul>
+                                <li>
+                                    <a href="https://github.com" target="blank"><i class="fab fa-github"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/" target="blank"><i
+                                            class="fab fa-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/" target="blank"><i
+                                            class="fab fa-linkedin-in"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://codepen.io"><i class="fab fa-codepen" target="blank"></i></a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+                </script>
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+                    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+                <script src="js/bootstrap.min.js"></script>
+                <script src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
+                <script src="https://kit.fontawesome.com/66aa7c98b3.js" crossorigin="anonymous"></script>
+                <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+
+                        $(document.body).on('click', '.pricing-table__button', function (event) {
+                            // event.preventDefault();
+                            /* Act on the event */
+                            var p_name = $(this).data('name');
+                            //alert(p_name);
+                            $('#p_variation').val(p_name);
+                        });
+
+                        $('.pricing-table').slick({
+                            dots: true,
+                            infinite: false,
+                            speed: 300,
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                            responsive: [{
+                                    breakpoint: 1024,
+                                    settings: {
+                                        slidesToShow: 3,
+                                        slidesToScroll: 3,
+                                        infinite: true,
+                                        dots: true
+                                    }
+                                },
+                                {
+                                    breakpoint: 600,
+                                    settings: {
+                                        slidesToShow: 2,
+                                        slidesToScroll: 2
+                                    }
+                                },
+                                {
+                                    breakpoint: 480,
+                                    settings: {
+                                        slidesToShow: 1,
+                                        slidesToScroll: 1
+                                    }
+                                }
+                                // You can unslick at a given breakpoint now by adding:
+                                // settings: "unslick"
+                                // instead of a settings object
+                            ]
+                        });
+                    });
+                </script>
 </body>
 
 </html>

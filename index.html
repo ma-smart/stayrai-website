@@ -945,6 +945,41 @@
                         </div>
                     </div>
                 </div>
+                <script type="module">
+                    // Import the functions you need from the SDKs you need
+                    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+                    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
+                    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+                    // TODO: Add SDKs for Firebase products that you want to use
+                    // https://firebase.google.com/docs/web/setup#available-libraries
+                  
+                    // Your web app's Firebase configuration
+                    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+                    const firebaseConfig = {
+                      apiKey: "AIzaSyDQ-KIpemyYallERSK03Qbvw-fugOBUhec",
+                      authDomain: "stayrai-website-a2b0b.firebaseapp.com",
+                      projectId: "stayrai-website-a2b0b",
+                      storageBucket: "stayrai-website-a2b0b.appspot.com",
+                      messagingSenderId: "71079941392",
+                      appId: "1:71079941392:web:7fd778749fa0cef1a24195",
+                      measurementId: "G-TMDG4F1JW3"
+                    };
+                  
+                    // Initialize Firebase
+                    const app = initializeApp(firebaseConfig);
+                    // const analytics = getAnalytics(app);
+                    const db = getFirestore(app);
+                    try {
+                        const docRef = await addDoc(collection(db, "engagement"), {
+                        name: "user",
+                        email: "user@email.com",
+                        device: "rein" //unicorn or boese
+                    });
+                    console.log("Document written with ID: ", docRef.id);
+                    } catch (e) {
+                        console.error("Error adding document: ", e);
+                    }
+                  </script>
                 <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
                 </script>
                 <script src="https://code.jquery.com/jquery-3.6.0.min.js"

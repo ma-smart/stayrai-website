@@ -218,12 +218,19 @@
 }
 
 @media (min-width: 768px) and (max-width: 934px) {
-    .midlleDescription p {
+    .middleDescription p {
         text-align: center;
     }
 }
 
 @media (max-width: 767px) {
+    .background {
+        background-image: url(../assets/images/shapes/header_mixed_full.svg), url(../assets/images/shapes/footer_mixed_full.svg);
+        background-repeat: no-repeat;
+        background-position: top, bottom;
+        background-size: 100%;
+    }
+
     .subscribe {
         border-radius: 10px;
         background: #ffffff;
@@ -238,7 +245,7 @@
     }
 
     .logo {
-        width: 20rem;
+        width: 10rem;
         height: 6rem;
         margin-top: 2rem;
         float: left;
@@ -247,10 +254,10 @@
 
     .logoTitle {
         color: white;
-        font-family: 'Nunito';
-        font-weight: 600;
-        font-size: 5rem;
-        position: absolute;
+        font-family: Nunito, sans-serif;
+        font-weight: 500;
+        font-size: 3em;
+        position: left;
     }
 
     .logoDescription {
@@ -280,6 +287,16 @@
     .downloadBtns {
         display: block;
         margin: 4rem auto 0 auto;
+        text-align: center;
+        font-family: Nunito, sans-serif;
+    }
+
+    .downloadBtns a {
+        display: block;
+        margin: 4rem auto 0 auto;
+        text-align: center;
+        font-size: 2em;
+        width: 150px;
     }
 
     .downloadBtns img {
@@ -290,7 +307,7 @@
     }
 
     .middleTitle {
-        margin-bottom: 6rem;
+        margin-top: 5rem;
     }
 
     .imgPhone {
@@ -318,6 +335,25 @@
         height: auto;
     }
 
+    .app_ss {
+        border-radius: 5px;
+        height: 110%;
+        width: 100%;
+    }
+
+    .pricing-table-wrapper {
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        margin-bottom: 12rem;
+    }
+
+    .TitleOne,
+    .TitleTwo,
+    .TitleThree {
+        font-size: 30px;
+    }
+
     .DescriptionDiv {
         display: block;
         margin-left: auto;
@@ -325,8 +361,8 @@
         align-items: center;
         text-align: center;
         width: 100%;
-        margin-top: -10rem;
-        margin-bottom: 6rem;
+        margin-top: -35rem;
+        margin-bottom: 15rem;
     }
 
     .help {
@@ -338,13 +374,57 @@
 
     }
 
-    .midlleDescription {
+    .middleDescription {
         text-align: center;
         width: 70%;
         display: block;
         margin-left: auto;
         margin-right: auto;
         padding-right: 0px;
+    }
+
+    .generatedTable {
+        width: 50%;
+    }
+
+    .pricing-table__img {
+        margin: 2em auto 2em;
+        width: 0%;
+        height: 0%;
+    }
+
+    .pricing-table__title {
+        font-size: 1.5em;
+    }
+
+    .pricing-table__tagline {
+        font-size: small;
+    }
+
+    .pricing-table__price {
+        font-size: medium;
+    }
+
+    .pricing-table__feature {
+        font-size: small;
+    }
+
+    .pricing-table__button {
+        font-size: 2rem;
+    }
+
+    .checkmark {
+        display: inline-block;
+        height: 15px;
+        width: 7px;
+        border-bottom: 5px solid #78BDD5;
+        border-right: 5px solid #78BDD5;
+        transform: rotate(45deg);
+    }
+
+    #submitButton {
+        font-size: 2em;
+
     }
 
     .endTitle p {
@@ -364,14 +444,15 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
-        width: 70%;
+        width: 100%;
         font-size: 1rem;
 
     }
 
     .footerBox p {
         font-weight: bolder;
-        font-size: 3.5rem;
+        font-size: 2rem;
+        font-family: Nunito, sans-serif;
     }
 
     .footerBox p a {
@@ -387,6 +468,10 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .footerDescription {
+        font-size: 1rem;
     }
 
     .footer {

@@ -64,385 +64,7 @@
         })(window, document, 'script', 'dataLayer', 'GTM-W8ZJSFM');
     </script>
     <!-- End Google Tag Manager -->
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        table.GeneratedTable {
-            text-align: center;
-            vertical-align: middle;
-            width: 100%;
-            background-color: #ffffff;
-            border-collapse: collapse;
-            border-width: 2px;
-            border-color: #fff;
-            border-style: solid;
-            color: #000000;
-        }
-
-        table.GeneratedTable td,
-        table.GeneratedTable th {
-            padding: 5px;
-        }
-
-        table.GeneratedTable thead {
-            background-color: #ffffff;
-        }
-
-        .app_ss {
-            border-radius: 10px;
-            width: 100%;
-            height: 100%;
-        }
-
-        .shape_ss {
-            border-radius: 10px;
-            width: 100%;
-            height: 100%;
-        }
-
-        .pricing-table-wrapper {
-            max-width: 80rem;
-            max-height: 50rem;
-            margin: 0 auto;
-        }
-
-        .pricing-table {
-            --pricing-table-color: #78BDD5;
-            display: block;
-            grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
-            grid-gap: 2em;
-            
-            margin: 0 auto;
-            padding: 1;
-            list-style-type: none;
-        }
-
-        .pricing-table__item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #fff;
-            padding: 1em;
-            border-radius: 1.5em;
-            border-color: #000;
-            transition: box-shadow 200ms cubic-bezier(0.02, 0.01, 0.47, 1), transform 200ms cubic-bezier(0.02, 0.01, 0.47, 1);
-            margin: 20px;
-            list-style-position: inside;
-            border: 0.5px solid rgb(212, 212, 212);
-        }
-
-        .pricing-table__item li button:before{
-            color: red;
-        }
-
-        .pricing-table__item:hover {
-            box-shadow: 0 10px 10px #78BDD5;
-        }
-
-        .pricing-table__item--popular {
-            position: relative;
-        }
-
-        .pricing-table__item--popular::before {
-            position: absolute;
-            content: attr(data-popular);
-            top: 2em;
-            right: 2em;
-            font-size: 0.9em;
-            padding: 0 1em;
-            background-color: #ffd900;
-            border-radius: 1em;
-            color: #282824;
-        }
-
-        .pricing-table__img {
-            margin: 2em auto 2em;
-            width: 100%;
-            height: 100%;
-        }
-
-        .pricing-table__title {
-            margin: 0;
-            font-size: 3em;
-            text-transform: capitalize;
-            text-align: center;
-            font-weight: bold;
-            color: #78BDD5;
-            background: -webkit-linear-gradient(#EBFAFF, #78BDD5);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .pricing-table__description {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 0 auto;
-            font-family: Nunito;
-        }
-
-        .pricing-table__tagline {
-            margin: 0;
-            font-size: medium;
-            color: #000;
-            text-align: center;
-            font-family: Nunito;
-        }
-
-        .pricing-table__price {
-            color: var(--pricing-table-color);
-            font-size: 2.5em;
-            margin: 1em auto 0;
-            font-weight: bold;
-        }
-
-        .pricing-table__label {
-            margin: 0;
-            color: #9ea0a3;
-            font-size: 0.9em;
-        }
-
-        .pricing-table__save {
-            color: #4cae4f;
-            font-weight: bold;
-        }
-
-        .pricing-table__products {
-            margin: 1.87em 0;
-            padding: 0;
-            list-style-type: none;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-            font-size: 1.2em;
-
-        }
-
-        .pricing-table__product {
-            display: flex;
-            align-items: center;
-            font-weight: bold;
-            margin-bottom: 0.5em;
-        }
-
-        .pricing-table__product a {
-            text-decoration: none;
-            color: inherit;
-            transition: color 0.2s ease-in-out;
-        }
-
-        .pricing-table__product a:hover {
-            color: var(--pricing-table-color);
-        }
-
-        .pricing-table__product::before {
-            content: " ";
-            width: 0.5em;
-            height: 0.5em;
-            -webkit-margin-end: 1em;
-            margin-inline-end: 1em;
-            border-radius: 50%;
-            background-color: var(--pricing-table-color);
-        }
-
-        .pricing-table__product--excluded::before {
-            content: " ";
-            width: 0.5em;
-            height: 0.5em;
-            -webkit-margin-end: 1em;
-            margin-inline-end: 1em;
-            border-radius: 0;
-            color: red;
-            background: no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 20 20' id='entypo-cross' width='32' height='32' fill='hsl(4, 90%, 58%)'%3E%3Cg%3E%3Cpath d='M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z'/%3E%3C/g%3E%3C/svg%3E") center/contain;
-            transform: scale(2.5);
-        }
-
-        .pricing-table__button {
-            /* background: var(--pricing-table-color);
-            color: #fff;
-            margin-top: auto;
-            padding: 1em 2em;
-            text-decoration: none;
-            width: 100%;
-            border-radius: 1.87em;
-            text-align: center;
-            transition: background 0.2s ease-in-out;
-            text-transform: capitalize; */
-        }
-
-        /* .pricing-table__button:hover {
-            background-color: #EBFAFF;
-        } */
-
-        .pricing-table__checkbox {
-            background-color: red;
-        }
-
-        input[type="checkbox"]:disabled {
-            appearance: none;
-            background-color: #fff;
-            margin: 0;
-            font: inherit;
-            color: currentColor;
-            width: 1.5em;
-            height: 1.5em;
-            border: 0.05em solid #78BDD5;
-            border-radius: 0.15em;
-            transform: translateY(-0.075em);
-
-        }
-
-        .checkmark {
-            display: inline-block;
-            height: 30px;
-            width: 15px;
-            border-bottom: 5px solid #78BDD5;
-            border-right: 5px solid #78BDD5;
-            transform: rotate(45deg);
-        }
-
-        input[type="checkbox"] {
-            appearance: none;
-            background-color: #fff;
-            margin: 0;
-            font: inherit;
-            color: currentColor;
-            width: 1.5em;
-            height: 1.5em;
-            border: 0.05em solid #78BDD5;
-            border-radius: 0.15em;
-            transform: translateY(-0.075em);
-        }
-
-        .hEKdsk.section-9,
-        .hEKdsk.section-8,
-        .hEKdsk.section-7 {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .hEKdsk .section-images {
-            display: flex;
-            flex-wrap: wrap;
-            -webkit-box-pack: start;
-            justify-content: center;
-        }
-
-        .cyIwMS {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            margin: 12px;
-        }
-
-
-        @media screen and (max-width: 1024px) {
-            .cyIwMS .team-member-img {
-                width: 224px;
-                height: 224px;
-            }
-        }
-
-        @media screen and (max-width: 1280px) {
-            .cyIwMS .team-member-img {
-                width: 185px;
-                height: 185px;
-            }
-        }
-
-        .cyIwMS .team-member-img {
-            width: 199px;
-            height: 199px;
-            background: linear-gradient(0deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08)), url(team_darius.png);
-            border-radius: 16px;
-        }
-
-        .cyIwMS .team-member-name {
-            font-weight: 500;
-            font-size: 16px;
-            color: var(--color-black);
-            margin-top: 8px;
-            margin-bottom: 4px;
-        }
-
-        .cyIwMS .team-member-title {
-            max-width: 180px;
-            font-weight: normal;
-            font-size: 12px;
-            color: rgb(125, 125, 125);
-        }
-
-        .cyIwMS .team-member-social {
-            position: absolute;
-            width: 32px;
-            height: 32px;
-            bottom: 48px;
-            left: 12px;
-        }
-
-        .social-menu ul {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            padding: 0;
-            margin: 0;
-            transform: translate(-50%, -50%);
-            display: flex;
-        }
-
-        .social-menu ul li {
-            list-style: none;
-            margin: 0 15px;
-        }
-
-        .social-menu ul li .fab {
-            font-size: 30px;
-            line-height: 60px;
-            transition: .3s;
-            color: #000;
-        }
-
-        .social-menu ul li .fab:hover {
-            color: #fff;
-        }
-
-        .social-menu ul li a {
-            position: relative;
-            display: block;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: #fff;
-            text-align: center;
-            transition: .6s;
-            box-shadow: 0 5px 4px rgba(0, 0, 0, .5);
-        }
-
-        .social-menu ul li a:hover {
-            transform: translate(0, -10%);
-        }
-
-        .social-menu ul li:nth-child(1) a:hover {
-            background-color: rgba(0, 0, 0, 0.829);
-        }
-
-        .social-menu ul li:nth-child(2) a:hover {
-            background-color: #E4405F;
-        }
-
-        .social-menu ul li:nth-child(3) a:hover {
-            background-color: #0077b5;
-        }
-
-        .social-menu ul li:nth-child(4) a:hover {
-            background-color: #000;
-        }
-    </style>
+    
 </head>
 
 <body class="background">
@@ -653,7 +275,7 @@
                             <td>&nbsp;</td>
                         </tr>
                         <tr>
-                            <td>Automated Water Change</td>
+                            <td class="pricing-table__feature">Automated Water Change</td>
                             <td>
                                 <div class="checkmark"></div>
                             </td>
@@ -665,7 +287,7 @@
                             </td>
                         </tr>
                         <tr id="borderTR">
-                            <td>App Support &amp; Notifications</td>
+                            <td class="pricing-table__feature">App Support &amp; Notifications</td>
                             <td>
                                 <div class="checkmark"></div>
                             </td>
@@ -677,7 +299,7 @@
                             </td>
                         </tr>
                         <tr id="borderTR">
-                            <td>WiFi Hotspot &amp; Repeater</td>
+                            <td class="pricing-table__feature">WiFi Hotspot &amp; Repeater</td>
                             <td>
                                 <div class="checkmark"></div>
                             </td>
@@ -689,7 +311,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Automatic Top-Off (ATO)</td>
+                            <td class="pricing-table__feature">Automatic Top-Off (ATO)</td>
                             <td>
                                 <div class="checkmark"></div>
                             </td>
@@ -701,7 +323,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Cloud Access</td>
+                            <td class="pricing-table__feature">Cloud Access</td>
                             <td>
                                 <div class=""></div>
                             </td>
@@ -713,7 +335,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Camera Monitoring</td>
+                            <td class="pricing-table__feature">Camera Monitoring</td>
                             <td>
                                 <div class=""></div>
                             </td>
@@ -725,7 +347,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Dosing Pumps</td>
+                            <td class="pricing-table__feature">Dosing Pumps</td>
                             <td>
                                 <h4>1</h4>
                             </td>
@@ -737,7 +359,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Temperature Sensors</td>
+                            <td class="pricing-table__feature">Temperature Sensors</td>
                             <td>
                                 <h4>2</h4>
                             </td>
@@ -749,7 +371,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Smart Power Plugs</td>
+                            <td class="pricing-table__feature">Smart Power Plugs</td>
                             <td>
                                 <h4>4</h4>
                             </td>
@@ -761,7 +383,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Sustainable pH Monitoring</td>
+                            <td class="pricing-table__feature">Sustainable pH Monitoring</td>
                             <td>
                                 <div class=""></div>
                             </td>
@@ -773,7 +395,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Sustainable ORP Monitoring</td>
+                            <td class="pricing-table__feature">Sustainable ORP Monitoring</td>
                             <td>
                                 <div class=""></div>
                             </td>
@@ -785,7 +407,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>AI Diagnosis &amp; Prediction</td>
+                            <td class="pricing-table__feature">AI Diagnosis &amp; Prediction</td>
                             <td>
                                 <div class=""></div>
                             </td>
@@ -823,7 +445,7 @@
                                 <p class="text-center">
                                     <a href="#reserve_now" data-name="Rein"
                                         class="pricing-table__button btn btn-info btn-lg"
-                                        style="font-family: Nunito;">Get Yours
+                                        >Get Yours
                                         Now</a>
                                 </p>
                             </td>
@@ -831,7 +453,7 @@
                                 <p class="text-center">
                                     <a href="#reserve_now" data-name="Unicorn"
                                         class="pricing-table__button btn btn-info btn-lg"
-                                        style="font-family: Nunito;">Get Yours
+                                        >Get Yours
                                         Now</a>
                                 </p>
                             </td>
@@ -839,7 +461,7 @@
                                 <p class="text-center">
                                     <a href="#reserve_now" data-name="Boese"
                                         class="pricing-table__button btn btn-info btn-lg"
-                                        style="font-family: Nunito;">Get Yours
+                                        >Get Yours
                                         Now</a>
                                 </p>
                             </td>
@@ -870,8 +492,8 @@
                                 </fieldset>
                                 <div class="g-recaptcha" data-sitekey="6LexEecdAAAAAOrLLPGYaP9zF9X-MsIgHDLkIsU2"></div>
                                 <br />
-                                <button type="submit" class="btn btn-info btn-lg"
-                                    style="font-family: Nunito;">Let me
+                                <button id="submitButton" type="submit" class="btn btn-info btn-lg"
+                                    >Let me
                                     Know</button>
                             </form>
                         </div>
@@ -979,28 +601,32 @@
                             infinite: true,
                             speed: 300,
                             slidesToShow: 3,
-                            slidesToScroll: 3,
+                            slidesToScroll: 1,
                             responsive: [{
                                     breakpoint: 1024,
                                     settings: {
                                         slidesToShow: 3,
-                                        slidesToScroll: 3,
-                                        infinite: true,
-                                        dots: true
+                                        slidesToScroll: 1,
+                                        arrows: false,
+                                        dots: false
                                     }
                                 },
                                 {
-                                    breakpoint: 600,
+                                    breakpoint: 800,
                                     settings: {
-                                        slidesToShow: 2,
-                                        slidesToScroll: 2
+                                        slidesToShow: 1,
+                                        slidesToScroll: 1,
+                                        arrows: false,
+                                        dots: false
                                     }
                                 },
                                 {
                                     breakpoint: 480,
                                     settings: {
                                         slidesToShow: 1,
-                                        slidesToScroll: 1
+                                        slidesToScroll: 1,
+                                        arrows: false,
+                                        dots: true
                                     }
                                 }
                                 // You can unslick at a given breakpoint now by adding:

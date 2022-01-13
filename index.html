@@ -32,38 +32,6 @@
 
     <link rel="stylesheet" type="text/css" href="https://kenwheeler.github.io/slick/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="https://kenwheeler.github.io/slick/slick/slick-theme.css" />
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CWXKH2GLGE"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-CWXKH2GLGE');
-    </script>
-
-    <!-- Google Tag Manager -->
-    <script>
-        (function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                '../www.googletagmanager.com/gtm5445.html?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-W8ZJSFM');
-    </script>
-    <!-- End Google Tag Manager -->
     <style>
         html {
             scroll-behavior: smooth;
@@ -113,7 +81,7 @@
             display: block;
             grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
             grid-gap: 2em;
-            
+
             margin: 0 auto;
             padding: 1;
             list-style-type: none;
@@ -133,7 +101,7 @@
             border: 0.5px solid rgb(212, 212, 212);
         }
 
-        .pricing-table__item li button:before{
+        .pricing-table__item li button:before {
             color: red;
         }
 
@@ -479,8 +447,15 @@
         });
         // const analytics = getAnalytics(app);
         const db = getFirestore(app);
-        async function subscribeUser(){
+       // async function subscribeUser(){
+        $('#stayrai-form').submit(async function() {
             try {
+                event.preventDefault();
+                grecaptcha.ready(function(){
+                    grecaptcha.execute('6LcD0ekdAAAAAPwXqoDLT-JWPqPGbFk9-g8Y0Vz1', {action: 'submit'}).then(function(token){
+                        $('#stayrai-form').prepend('<input type="hidden" "name="g-recaptcha-response" value="' + token + '">');        
+                    });
+                });
                 const username = document.getElementById("nameInput").value;
                 const useremail = document.getElementById("emailInput").value;
                 const devicevariation = document.getElementById("p_variation").value;
@@ -489,21 +464,17 @@
                 email: useremail,
                 device: devicevariation //unicorn or boese
             });
+            $('#confirmationModal').modal('show');       
             console.log("Document written with ID: ", docRef.id);
             } catch (e) {
                 console.error("Error adding document: ", e);
             }
-        }
-        window.subscribeUser = subscribeUser;
+        });
+        // window.subscribeUser = subscribeUser;
     </script>
 </head>
 
 <body class="background">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8ZJSFM" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
     <nav class="navbar navbar-expand-lg mt-4 ml-5">
         <div class="row">
             <div class=" col-xs-12 col-md-1">
@@ -903,7 +874,7 @@
                 </div>
                 <div class="container-lg communities" id="reserve_now">
                     <h2 class="middleTitle text-center">Reserve your unit now</h2>
-    
+
                     <div class="row">
                         <div class="col-lg">
                             <form id="stayrai-form">
@@ -924,12 +895,31 @@
                                         <option value="Boese">Böse - Fish Freak</option>
                                     </select>
                                 </fieldset>
-                                <div class="g-recaptcha" data-sitekey="6LcD0ekdAAAAAPwXqoDLT-JWPqPGbFk9-g8Y0Vz1"></div>
                                 <br />
-                                <button type="submit" class="btn btn-info btn-lg"
-                                    style="font-family: Nunito;" data-action='submit' data-sitekey="6LcD0ekdAAAAAPwXqoDLT-JWPqPGbFk9-g8Y0Vz1" data-callback="subscribeUser()">Let me
+                                <button type="submit" class="btn btn-info btn-lg" style="font-family: Nunito;">Let me
                                     Know</button>
                             </form>
+                        </div>
+                        <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog"
+                            aria-labelledby="confirmationModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" style="font-family: Nunito; font-size: large;"
+                                            id="exampleModalLabel">StayrAI says...</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body" style="font-family: Nunito; font-size: medium;">
+                                        Thank you for your interest! We will be in touch soon.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="pricing-table__button btn btn-info btn-lg"
+                                            data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-lg">
                             <img class="middleIllustration" src="assets/images/logos/rein_main_cropped.png" />
@@ -944,8 +934,7 @@
                             <img class="team-member-img" src="assets/images/team/mohsen.jpeg" alt="">
                             <div class="team-member-name">Dr. Mohsen Ahmadvand</div>
                             <div class="team-member-title">Co-Founder</div>
-                            <a href="https://www.linkedin.com/in/mahmadvand/" target="_blank"
-                                rel="noopener noreferrer">
+                            <a href="https://www.linkedin.com/in/mahmadvand/" target="_blank" rel="noopener noreferrer">
                                 <img class="team-member-social" src="assets/images/team/linkedin-blue.png" alt="">
                             </a>
                         </div>
@@ -963,8 +952,8 @@
 
                 <div class="container-fluid footerBox">
                     <div class="row footerGet">
-                        <div class="endTitle">    
-                                <p>Stay connected, stay ahead, stay relaxed ... StayrAI!</p>
+                        <div class="endTitle">
+                            <p>Stay connected, stay ahead, stay relaxed ... StayrAI!</p>
                         </div>
                     </div>
                     <div class="row footer">
@@ -976,7 +965,8 @@
                             <div class="row">
                                 <div class="col-xs-12 col-md-8 p-0">
                                     <!-- <p class="footerTitle">News</p> -->
-                                    <p class="footerDescription">Check our social media accounts for more information about what is new with StayrAI!</p>
+                                    <p class="footerDescription">Check our social media accounts for more information
+                                        about what is new with StayrAI!</p>
                                 </div>
                             </div>
                         </div>
@@ -1001,7 +991,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
                 </script>
                 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -1009,12 +999,8 @@
                 <script src="js/bootstrap.min.js"></script>
                 <script src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
                 <script src="https://kit.fontawesome.com/66aa7c98b3.js" crossorigin="anonymous"></script>
-                <script src="https://www.google.com/recaptcha/api.js?render=6LcD0ekdAAAAAPwXqoDLT-JWPqPGbFk9-g8Y0Vz1"></script>
-                <!-- <script>
-                    function onSubmit(token) {
-                        document.getElementById("stayrai-form").submit();
-                    }
-                </script> -->
+                <script src="https://www.google.com/recaptcha/api.js?render=6LcD0ekdAAAAAPwXqoDLT-JWPqPGbFk9-g8Y0Vz1">
+                </script>
                 <script type="text/javascript">
                     $(document).ready(function () {
 
@@ -1029,7 +1015,7 @@
                         $('.pricing-table').slick({
                             autoplay: true,
                             dotsClass: 'stayrai-dots',
-                            prevArrow:   '<button type="button" data-role="none" class="stayrai-prev" aria-label="Previous" tabindex="0" role="button">Previous</button>',
+                            prevArrow: '<button type="button" data-role="none" class="stayrai-prev" aria-label="Previous" tabindex="0" role="button">Previous</button>',
                             nextArrow: '<button type="button" data-role="none" class="stayrai-next" aria-label="Next" tabindex="0" role="button">Next</button>',
                             dots: true,
                             arrows: true,
@@ -1068,4 +1054,5 @@
                     });
                 </script>
 </body>
+
 </html>

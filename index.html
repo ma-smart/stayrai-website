@@ -438,55 +438,38 @@
         const app = initializeApp(firebaseConfig);
         // Pass your reCAPTCHA v3 site key (public key) to activate(). Make sure this
         // key is the counterpart to the secret key you set in the Firebase console.
-        // const appCheck = initializeAppCheck(app, {
-        //     provider: new ReCaptchaV3Provider('6LcD0ekdAAAAAPwXqoDLT-JWPqPGbFk9-g8Y0Vz1'),
-        //     isTokenAutoRefreshEnabled: true // Optional argument. If true, the SDK automatically refreshes App Check  tokens as needed.
-        // });
+        const appCheck = initializeAppCheck(app, {
+            provider: new ReCaptchaV3Provider('6LcD0ekdAAAAAPwXqoDLT-JWPqPGbFk9-g8Y0Vz1'),
+            isTokenAutoRefreshEnabled: true // Optional argument. If true, the SDK automatically refreshes App Check  tokens as needed.
+        });
         // const analytics = getAnalytics(app);
         const db = getFirestore(app);
-        async function onSubmit(){
-            if (document.getElementById("nameInput") != "" && document.getElementById("emailInput") != ""){
-                try {
-                    // Submit form to Cloud firestore
-                    const username = document.getElementById("nameInput").value;
-                    const useremail = document.getElementById("emailInput").value;
-                    const devicevariation = document.getElementById("p_variation").value;
-                    const docRef = await addDoc(collection(db, "engagement"), {
-                        name: username,
-                        email: useremail,
-                        device: devicevariation //unicorn or boese
-                    });
-                    $('#confirmationModal').modal('show');       
-                    console.log("Document written with ID: ", docRef.id);
-                } catch (e) {
-                    $('#errorModal').modal('show');       
-                    console.error("Error adding document: ", e);
-                }
+        $('#stayrai-form').submit(async function() {
+            event.preventDefault();
+            try {
+                // Submit form to Cloud firestore
+                const username = document.getElementById("nameInput").value;
+                const useremail = document.getElementById("emailInput").value;
+                const devicevariation = document.getElementById("p_variation").value;
+                const docRef = await addDoc(collection(db, "engagement"), {
+                    name: username,
+                    email: useremail,
+                    device: devicevariation //unicorn or boese
+                });
+                $('#confirmationModal').modal('show');       
+                console.log("Document written with ID: ", docRef.id);
+            } catch (e) {
+                $('#errorModal').modal('show');       
+                console.error("Error adding document: ", e);
             }
-        }
-        window.onSubmit = onSubmit;
+        });
+        //window.onSubmit = onSubmit;
         // $('#stayrai-form').submit(function() {
         //     event.preventDefault();
         //     grecaptcha.ready(function(){
-        //         try {
-        //             grecaptcha.execute('6LcD0ekdAAAAAPwXqoDLT-JWPqPGbFk9-g8Y0Vz1', {action: 'submit'}).then(async function(token){
-        //                 // Some code that uses this "token" and verifies it is correct then ... 
-        //             // Submit form to Cloud firestore
-        //             const username = document.getElementById("nameInput").value;
-        //             const useremail = document.getElementById("emailInput").value;
-        //             const devicevariation = document.getElementById("p_variation").value;
-        //             const docRef = await addDoc(collection(db, "engagement"), {
-        //                 name: username,
-        //                 email: useremail,
-        //                 device: devicevariation //unicorn or boese
-        //             });
-        //             $('#confirmationModal').modal('show');       
-        //             console.log("Document written with ID: ", docRef.id);
-        //             });
-        //         } catch (e) {
-        //             $('#errorModal').modal('show');       
-        //             console.error("Error adding document: ", e);
-        //         }
+        //         grecaptcha.execute('6LcD0ekdAAAAAPwXqoDLT-JWPqPGbFk9-g8Y0Vz1', {action: 'submit'}).then(async function(token){
+        //             // Some code that uses this "token" and verifies it is correct then ... 
+        //         });
         //     });
         // });
     </script>
@@ -914,9 +897,7 @@
                                     </select>
                                 </fieldset>
                                 <br />
-                                <button type="submit" class="g-recaptcha btn btn-info btn-lg" style="font-family: Nunito;" data-sitekey='6LcD0ekdAAAAAPwXqoDLT-JWPqPGbFk9-g8Y0Vz1'
-                                data-callback='onSubmit' 
-                                data-action='submit'>Let me
+                                <button type="submit" class="g-recaptcha btn btn-info btn-lg" style="font-family: Nunito;">Let me
                                     Know</button>
                             </form>
                         </div>
@@ -1040,9 +1021,8 @@
                 <script src="js/bootstrap.min.js"></script>
                 <script src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
                 <script src="https://kit.fontawesome.com/66aa7c98b3.js" crossorigin="anonymous"></script>
-                <!-- <script src="https://www.google.com/recaptcha/api.js?render=6LcD0ekdAAAAAPwXqoDLT-JWPqPGbFk9-g8Y0Vz1"> -->
-                <script src="https://www.google.com/recaptcha/api.js"></script>
-                </script>
+                <script src="https://www.google.com/recaptcha/api.js?render=6LcD0ekdAAAAAPwXqoDLT-JWPqPGbFk9-g8Y0Vz1"></script>
+                <!-- <script src="https://www.google.com/recaptcha/api.js"></script> -->
                 <script type="text/javascript">
                     $(document).ready(function () {
 

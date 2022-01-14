@@ -228,7 +228,7 @@
         background-image: url(../assets/images/shapes/header_mixed_full.svg), url(../assets/images/shapes/footer_mixed_full.svg);
         background-repeat: no-repeat;
         background-position: top, bottom;
-        background-size: 100%;
+        background-size: 1300px;
     }
 
     .subscribe {
@@ -258,6 +258,7 @@
         font-weight: 500;
         font-size: 3em;
         position: left;
+        margin-top: 60px;
     }
 
     .logoDescription {
@@ -268,6 +269,7 @@
 
     .header {
         margin-right: 3rem;
+        margin-top: 3rem;
     }
 
     .container-lg {
@@ -281,7 +283,7 @@
 
     .mainDescription {
         text-align: center;
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .downloadBtns {
@@ -308,6 +310,7 @@
 
     .middleTitle {
         margin-top: 5rem;
+        margin-bottom: 35px;
     }
 
     .imgPhone {
@@ -319,7 +322,12 @@
 
     .spots {
         margin-left: 0;
+        margin-top: 0px;
+            margin-bottom: 60px !important;
     }
+    .shape_ss {
+    max-width: 280px;
+}
 
     .spot {
         width: 100%;
@@ -337,7 +345,7 @@
 
     .app_ss {
         border-radius: 5px;
-        height: 110%;
+        height: auto;
         width: 100%;
     }
 
@@ -351,7 +359,9 @@
     .TitleOne,
     .TitleTwo,
     .TitleThree {
-        font-size: 30px;
+        font-size: 24px;
+        margin-bottom: 10px;
+        margin-top: 0px;
     }
 
     .DescriptionDiv {
@@ -361,9 +371,10 @@
         align-items: center;
         text-align: center;
         width: 100%;
-        margin-top: -35rem;
-        margin-bottom: 15rem;
+        margin-top: 1rem;
+        margin-bottom: 0px;
     }
+   
 
     .help {
         margin-top: auto;
@@ -389,7 +400,8 @@
 
     .pricing-table__img {
         margin: 2em auto 2em;
-        width: 0%;
+        width: 100%;
+        max-width: 80px;
         height: 0%;
     }
 
@@ -424,7 +436,7 @@
 
     #submitButton {
         font-size: 2em;
-
+        padding: 6px 25px;
     }
 
     .endTitle p {
@@ -461,7 +473,7 @@
     }
 
     .endTitle p {
-        font-size: 4rem;
+        font-size: 3rem;
     }
 
     .footerGet {
@@ -492,9 +504,55 @@
     .extraInfo {
         display: none;
     }
-
+    .formrow1{
+        order: 3;
+    }
+    .mainTitle{
+        margin-top: 3rem;
+        font-size: 24px;
+    }
 }
-
+@media(max-width:1000px){
+       .formrow2{
+text-align: center;
+margin-bottom: 2rem;
+    }
+    .middleIllustration{
+width: 17rem;
+height: auto;
+    margin: auto;
+    text-align: center;
+    }
+    .formrow1{
+        order: 1;
+        
+    }
+  
+}
+@media(max-width:600px){
+    .table1{
+        overflow-x: auto;
+    }
+    table.GeneratedTable{
+       width: 760px;
+    }
+    .pricing-table__img {
+    margin: 0em auto 0em;
+}
+}
+@media(max-width:500px){
+    .help{
+        margin-top: 42rem;
+    }
+      .background{
+            background-size: 1500px;
+    }
+    .mainTitle {
+    margin-top: 3rem;
+    font-size: 21px;
+        line-height: 28px;
+}
+}
 @media (max-width: 400px) {
     .phone {
         width: 95%;
@@ -515,7 +573,7 @@
     }
 
     .footerBox p {
-        font-size: 2.9rem;
+        font-size: 2rem;
     }
 
     .footerBox p a {
@@ -524,5 +582,13 @@
 
     .endTitle p {
         font-size: 2.9rem;
+    }
+    .help {
+    margin-top: 30rem;
+}
+}
+@media(max-width:1600px){
+    .middleIllustration{
+        width: 14vw;
     }
 }

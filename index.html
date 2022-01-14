@@ -1,8 +1,7 @@
 <html>
-
 <head>
     <meta charset="utf-8">
-    <title>StayrAI - Check on your tank anytime anywhere</title>
+    <title>StayrAI - Your Aquarium. Smarter.</title>
     <meta content="StayrAI - Check on your tank anytime anywhere" property="og:title">
     <meta content="StayrAI - Check on your tank anytime anywhere" property="og:site_name">
     <meta content="StayrAI - Check on your tank anytime anywhere" property="twitter:title">
@@ -11,13 +10,6 @@
 
 
     <meta content="https://StayrAI.com" property="og:url">
-
-    <!-- <meta property="og:image" content="img/preview.png">
-
-    <meta content="@wStayrAI" property="twitter:site">
-    <meta property="twitter:image" content="img/preview.png">
-    <meta property="twitter:image:src" content="img/preview.png">
-    <meta property="twitter:card" content="summary_large_image"> -->
 
     <meta content="website" property="og:type">
     <meta name="format-detection" content="email=no">
@@ -29,49 +21,74 @@
     <meta http-equiv="Cache-Control" content="max-age=18000, must-revalidate" />
 
     <link rel="icon" type="image/png" href="assets/images/logos/logo_noback.png" />
-
     <link rel="stylesheet" type="text/css" href="https://kenwheeler.github.io/slick/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="https://kenwheeler.github.io/slick/slick/slick-theme.css" />
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CWXKH2GLGE"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { initializeAppCheck, ReCaptchaV3Provider } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app-check.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-CWXKH2GLGE');
-    </script>
-
-    <!-- Google Tag Manager -->
-    <script>
-        (function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                '../www.googletagmanager.com/gtm5445.html?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-W8ZJSFM');
-    </script>
-    <!-- End Google Tag Manager -->
+        const firebaseConfig = {
+        apiKey: "AIzaSyDQ-KIpemyYallERSK03Qbvw-fugOBUhec",
+        authDomain: "stayrai-website-a2b0b.firebaseapp.com",
+        projectId: "stayrai-website-a2b0b",
+        storageBucket: "stayrai-website-a2b0b.appspot.com",
+        messagingSenderId: "71079941392",
+        appId: "1:71079941392:web:7fd778749fa0cef1a24195",
+        measurementId: "G-TMDG4F1JW3"
+        };
     
-</head>
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const appCheck = initializeAppCheck(app, {
+            provider: new ReCaptchaV3Provider('6LcD0ekdAAAAAPwXqoDLT-JWPqPGbFk9-g8Y0Vz1'),
+            isTokenAutoRefreshEnabled: true // Optional argument. If true, the SDK automatically refreshes App Check  tokens as needed.
+        });
+        // const analytics = getAnalytics(app);
+        const db = getFirestore(app);
+        $('#stayrai-form').submit(async function() {
+            event.preventDefault();
+            try {
+                // Submit form to Cloud firestore
+                const username = document.getElementById("nameInput").value;
+                const useremail = document.getElementById("emailInput").value;
+                const devicevariation = document.getElementById("p_variation").value;
+                const docRef = await addDoc(collection(db, "engagement"), {
+                    name: username,
+                    email: useremail,
+                    device: devicevariation //unicorn or boese
+                });
+                $('#confirmationModal').modal('show');       
+                console.log("Document written with ID: ", docRef.id);
+                // Disable elements 
+                $('#nameInput').value = username;
+                $('#nameInput').attr('disabled', 'disabled');
+                $('#emailInput').value = useremail;
+                $('#emailInput').attr('disabled', 'disabled');
+                $('#p_variation').value = devicevariation;
+                $('#p_variation').attr('disabled', 'disabled');
+                $('#submitButton').attr('disabled', 'disabled');
+            } catch (e) {
+                $('#errorModal').modal('show');       
+                console.error("Error adding document: ", e);
+            }
+        });
+        //window.onSubmit = onSubmit;
+        // $('#stayrai-form').submit(function() {
+        //     event.preventDefault();
+        //     grecaptcha.ready(function(){
+        //         grecaptcha.execute('6LcD0ekdAAAAAPwXqoDLT-JWPqPGbFk9-g8Y0Vz1', {action: 'submit'}).then(async function(token){
+        //             // Some code that uses this "token" and verifies it is correct then ... 
+        //         });
+        //     });
+        // });
+    </script>
 
+</head>
 <body class="background">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8ZJSFM" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+
 
     <nav class="navbar navbar-expand-lg mt-4 ml-5">
         <div class="row">
@@ -476,29 +493,72 @@
     
                     <div class="row">
                         <div class="col-lg">
-                            <form id="stayrai-form">
+                            <form id="stayrai-form" class="needs-validation">
                                 <fieldset class="form-group">
-                                    <input type="email" class="formElement" style="width: 255px; height: 30px;"
-                                        id="exampleInputEmail1" placeholder="Enter your email*" required>
+                                    <input type="text" class="formElement" style="width: 255px; height: 30px;"
+                                        id="nameInput" placeholder="Enter your name*" required>
                                 </fieldset>
                                 <fieldset class="form-group">
-                                    <select class="formElement" id="p_variation" required>
-                                        <option>Select your StayrAI</option>
-                                        <option value="None">No preference</option>
+                                    <input type="email" class="formElement" style="width: 255px; height: 30px;"
+                                        id="emailInput" placeholder="Enter your email*" required>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <select class="formElement" id="p_variation" onchange="updateImage()" required>
+                                        <option value="">Select your StayrAI</option>
                                         <option value="Rein">Rein - Hobbyists</option>
                                         <option value="Unicorn">Unicorn - Enthusiasts</option>
                                         <option value="Boese">Böse - Fish Freak</option>
                                     </select>
                                 </fieldset>
-                                <div class="g-recaptcha" data-sitekey="6LexEecdAAAAAOrLLPGYaP9zF9X-MsIgHDLkIsU2"></div>
                                 <br />
-                                <button id="submitButton" type="submit" class="btn btn-info btn-lg"
-                                    >Let me
+                                <button id="submitButton" type="submit" class="btn btn-info btn-lg">Let me
                                     Know</button>
                             </form>
+                            <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog"
+                            aria-labelledby="confirmationModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" style="font-family: Nunito; font-size: large;"
+                                            id="exampleModalLabel">StayrAI says...</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body" style="font-family: Nunito; font-size: medium;">
+                                        Thank you for your interest! We will be in touch soon.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="pricing-table__button btn btn-info btn-lg"
+                                            data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="errorModal" tabindex="-1" role="dialog"
+                            aria-labelledby="errorModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" style="font-family: Nunito; font-size: large;"
+                                            id="exampleModalLabel">StayrAI says...</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body" style="font-family: Nunito; font-size: medium;">
+                                        Something went wrong, unfortunately! Please try again later.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="pricing-table__button btn btn-danger btn-lg"
+                                            data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         </div>
                         <div class="col-lg">
-                            <img class="middleIllustration" src="assets/images/logos/rein_main_cropped.png" />
+                            <img id="submitImage" class="middleIllustration" src="assets/images/logos/rein_main_cropped.png" />
                         </div>
                     </div>
 
@@ -574,13 +634,15 @@
                 <script src="js/bootstrap.min.js"></script>
                 <script src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
                 <script src="https://kit.fontawesome.com/66aa7c98b3.js" crossorigin="anonymous"></script>
-                <script src="https://www.google.com/recaptcha/api.js"></script>
-                <!-- <script>
-                    function onSubmit(token) {
-                        document.getElementById("stayrai-form").submit();
-                    }
-                </script> -->
+                <script src="https://www.google.com/recaptcha/api.js?render=6LcD0ekdAAAAAPwXqoDLT-JWPqPGbFk9-g8Y0Vz1"></script>
+                <!-- <script src="https://www.google.com/recaptcha/api.js"></script> -->
                 <script type="text/javascript">
+                    function updateImage(){
+                        if ($('#p_variation').val() != ""){
+                            $('#submitImage').attr('src', 'assets/images/logos/'+ $('#p_variation').val().toLowerCase() + '_main_cropped.png');
+                        }
+                    }
+
                     $(document).ready(function () {
 
                         $(document.body).on('click', '.pricing-table__button', function (event) {
@@ -589,6 +651,7 @@
                             var p_name = $(this).data('name');
                             //alert(p_name);
                             $('#p_variation').val(p_name);
+                            $('#submitImage').attr('src', 'assets/images/logos/'+ p_name.toLowerCase() + '_main_cropped.png');
                         });
 
                         $('.pricing-table').slick({

@@ -6,7 +6,10 @@
 }
 
 .spots {
-    margin-top: 100px;
+    margin-top: 75px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 div.spot,
@@ -281,6 +284,11 @@ div#spot5 {
     font-weight: 100;
 }
 
+.downloadBtns a {
+    font-size: 2rem;
+    padding: 6px 20px;
+}
+
 /*ремы*/
 .downloadBtns img {
     width: 18rem;
@@ -288,16 +296,20 @@ div#spot5 {
 }
 
 .middleTitle {
-    margin-bottom: 8.3rem;
-    line-height: 6rem;
+    margin-bottom: 20px;
     color: black;
     font-family: Montserrat-Bold, sans-serif;
-    font-size: 4.6rem;
     width: 100%;
+    font-size: 48px;
 }
 
 .communities {
-    margin-top: 12rem;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.txt2 {
+    margin-bottom: 40px;
 }
 
 .help {
@@ -305,15 +317,13 @@ div#spot5 {
 }
 
 .features {
-    margin-top: 23rem;
+    margin-top: 240px;
 }
 
 .TitleOne {
-    margin-top: 12rem;
-    line-height: 4rem;
     color: black;
     font-family: Montserrat-Bold, sans-serif;
-    font-size: 3rem;
+    font-size: 35px;
 }
 
 .DescriptionOne {
@@ -331,16 +341,12 @@ div#spot5 {
     position: relative;
 }
 
-.DescriptionDiv {
-    margin-left: 10%;
-}
+.DescriptionDiv {}
 
 .TitleTwo {
-    margin-top: 13rem;
-    line-height: 4rem;
     color: black;
     font-family: Montserrat-Bold, sans-serif;
-    font-size: 3rem;
+    font-size: 35px;
 }
 
 .DescriptionBody {
@@ -353,29 +359,31 @@ div#spot5 {
 .DescriptionTwo {
     line-height: 3.6rem;
     color: black;
-    font-family: Nunito-Light, sans-serif;
+    font-family: Nunito, sans-serif;
     font-size: 2.5rem;
 }
 
 .TitleThree {
-    margin-top: 9.6rem;
-    line-height: 4rem;
     color: black;
     font-family: Montserrat-Bold, sans-serif;
-    font-size: 3rem;
+    font-size: 35px;
 }
 
 .DescriptionThree {
     line-height: 3.6rem;
     color: black;
-    font-family: Nunito-Light, sans-serif;
+    font-family: Nunito, sans-serif;
     font-size: 2.5rem;
+}
+
+.discridiv {
+    margin-top: 100px;
 }
 
 .endDescription {
     color: black;
     line-height: 15.6rem;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: Nunito, sans-serif;
     font-size: 2.9rem;
 }
 
@@ -387,7 +395,7 @@ div#spot5 {
 .middleDescription {
     line-height: 4.4rem;
     color: black;
-    font-family: Nunito-Light, sans-serif;
+    font-family: Nunito, sans-serif;
     font-size: 3.3rem;
 }
 
@@ -423,8 +431,20 @@ div#spot5 {
 }
 
 .middleIllustration {
-    width: 30rem;
-    height: 25rem;
+    /* width: 165px;
+    height: auto; */
+    max-width: 40%;
+    max-height: 40%;
+}
+
+#reserve_now .row {
+    max-width: 100%;
+    margin: auto;
+    align-items: center;
+}
+
+.formrow2 {
+    text-align: left;
 }
 
 .footerBox {
@@ -466,7 +486,7 @@ div#spot5 {
 .footerMenuElement {
     line-height: 2.9rem;
     color: black;
-    font-family: Nunito-, sans-serif;
+    font-family: Nunito, sans-serif;
     font-size: 2rem;
 }
 
@@ -484,6 +504,11 @@ div#spot5 {
     font-family: Nunito, sans-serif;
     font-size: medium;
     color: #000;
+    width: 100%;
+}
+
+.form-group input {
+    width: 100%;
 }
 
 .formElement:focus {
@@ -686,10 +711,16 @@ table.GeneratedTable {
 table.GeneratedTable td,
 table.GeneratedTable th {
     padding: 5px;
+    text-align: center;
 }
 
 table.GeneratedTable thead {
     background-color: #ffffff;
+}
+
+#submitButton {
+    font-size: 2rem;
+    padding: 6px 20px;
 }
 
 .app_ss {
@@ -700,8 +731,8 @@ table.GeneratedTable thead {
 
 .shape_ss {
     border-radius: 10px;
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .pricing-table-wrapper {
@@ -759,14 +790,16 @@ table.GeneratedTable thead {
 }
 
 .pricing-table__img {
-    margin: 2em auto 2em;
-    width: 100%;
-    height: 100%;
+    margin: 25px auto 0em;
+    /* width: 170px;
+    height: 100%; */
+    max-width: 50%;
+    max-height: 50%;
 }
 
 .pricing-table__title {
     margin: 0;
-    font-size: 3em;
+    font-size: 2em;
     text-transform: capitalize;
     text-align: center;
     font-weight: bold;
@@ -782,7 +815,7 @@ table.GeneratedTable thead {
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    font-family: Nunito;
+    font-family: Nunito, sans-serif;
 }
 
 .pricing-table__tagline {
@@ -795,7 +828,7 @@ table.GeneratedTable thead {
 
 .pricing-table__price {
     color: var(--pricing-table-color);
-    font-size: 2.5em;
+    font-size: 1.8em;
     margin: 1em auto 0;
     font-weight: bold;
 }
@@ -875,6 +908,8 @@ table.GeneratedTable thead {
     transition: background 0.2s ease-in-out;
     text-transform: capitalize; */
     font-family: Nunito, sans-serif;
+    font-size: 2rem;
+    padding: 6px 20px
 }
 
 /* .pricing-table__button:hover {
@@ -930,6 +965,7 @@ input[type="checkbox"] {
 .hEKdsk.section-7 {
     display: flex;
     flex-direction: column;
+    margin: auto;
 }
 
 .hEKdsk .section-images {
@@ -964,7 +1000,7 @@ input[type="checkbox"] {
 .cyIwMS .team-member-img {
     width: 199px;
     height: 199px;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08)), url(assets/images/team/224.png);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08)), url(../assets/images/team/224.png);
     border-radius: 16px;
 }
 
@@ -1047,4 +1083,11 @@ input[type="checkbox"] {
 
 .social-menu ul li:nth-child(4) a:hover {
     background-color: #000;
+}
+
+#stayrai-form {
+    max-width: 300px;
+    margin: auto;
+    text-align: left;
+
 }

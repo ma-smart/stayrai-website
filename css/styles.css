@@ -283,7 +283,8 @@ div#spot5 {
     font-style: normal;
     font-weight: 100;
 }
-.downloadBtns a{
+
+.downloadBtns a {
     font-size: 2rem;
     padding: 6px 20px;
 }
@@ -301,14 +302,16 @@ div#spot5 {
     width: 100%;
     font-size: 48px;
 }
- 
+
 .communities {
     margin-top: 100px;
     margin-bottom: 100px;
 }
-.txt2{
+
+.txt2 {
     margin-bottom: 40px;
 }
+
 .help {
     margin-top: 10rem;
 }
@@ -338,9 +341,7 @@ div#spot5 {
     position: relative;
 }
 
-.DescriptionDiv {
-  
-}
+.DescriptionDiv {}
 
 .TitleTwo {
     color: black;
@@ -374,7 +375,8 @@ div#spot5 {
     font-family: Nunito-Light, sans-serif;
     font-size: 2.5rem;
 }
-.discridiv{
+
+.discridiv {
     margin-top: 100px;
 }
 
@@ -432,14 +434,17 @@ div#spot5 {
     width: 165px;
     height: auto;
 }
-#reserve_now .row{
+
+#reserve_now .row {
     max-width: 800px;
     margin: auto;
     align-items: center;
 }
-.formrow2{
+
+.formrow2 {
     text-align: center;
 }
+
 .footerBox {
     margin-top: 20rem;
     margin-left: 0;
@@ -499,7 +504,8 @@ div#spot5 {
     color: #000;
     width: 100%;
 }
-.form-group input{
+
+.form-group input {
     width: 100%;
 }
 
@@ -709,10 +715,12 @@ table.GeneratedTable th {
 table.GeneratedTable thead {
     background-color: #ffffff;
 }
-#submitButton{
+
+#submitButton {
     font-size: 2rem;
     padding: 6px 20px;
 }
+
 .app_ss {
     border-radius: 10px;
     width: 100%;
@@ -721,8 +729,8 @@ table.GeneratedTable thead {
 
 .shape_ss {
     border-radius: 10px;
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .pricing-table-wrapper {
@@ -781,8 +789,10 @@ table.GeneratedTable thead {
 
 .pricing-table__img {
     margin: 25px auto 0em;
-    width: 170px;
-    height: 100%;
+    /* width: 170px;
+    height: 100%; */
+    max-width: 50%;
+    max-height: 50%;
 }
 
 .pricing-table__title {
@@ -1073,8 +1083,8 @@ input[type="checkbox"] {
     background-color: #000;
 }
 
-#stayrai-form{
-        max-width: 300px;
+#stayrai-form {
+    max-width: 300px;
     margin: auto;
     text-align: center;
 

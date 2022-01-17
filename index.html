@@ -76,15 +76,6 @@
                 console.error("Error adding document: ", e);
             }
         });
-        //window.onSubmit = onSubmit;
-        // $('#stayrai-form').submit(function() {
-        //     event.preventDefault();
-        //     grecaptcha.ready(function(){
-        //         grecaptcha.execute('6LcD0ekdAAAAAPwXqoDLT-JWPqPGbFk9-g8Y0Vz1', {action: 'submit'}).then(async function(token){
-        //             // Some code that uses this "token" and verifies it is correct then ... 
-        //         });
-        //     });
-        // });
     </script>
 
 </head>
@@ -138,7 +129,7 @@
         <!-- Section I: Hate Water changes? -->
         <div class="spots row justify-content-md-end justify-content-lg-end mb-5">
             <div id="spot1" class="spot col-xs-12 col-md-5 col-lg-5 order-xs-1 order-sm-1 order-md-2 order-lg-2">
-                <img class="shape_ss" src="assets/images/illustrations/manual_change.svg">
+                <img class="shape_ss" src="assets/images/illustrations/new/manual_change.svg">
             </div>
             <div id="DescriptionDiv2"
                 class="DescriptionDiv col-xs-12 col-md-5 col-lg-5 order-xs-2 order-sm-2 order-md-1 order-lg-1">
@@ -153,7 +144,7 @@
         <!-- Section II: Worried about your fish tank while travelling? -->
         <div class="spots row justify-content-md-center mb-5">
             <div id="spot2" class="spot col-xs-12 col-md-5 col-lg-5">
-                <img class="shape_ss" src="assets/images/illustrations/worried_traveller_thinner.svg"
+                <img class="shape_ss" src="assets/images/illustrations/new/travel.svg"
                     class="img-responsive">
             </div>
             <div class="DescriptionDiv col-xs-12 col-md-5 col-lg-5">
@@ -167,7 +158,7 @@
         <!-- Section III: Lost your pets to diseases or missed maintenance? -->
         <div class="spots row justify-content-md-end justify-content-lg-end mb-5">
             <div id="spot3" class="spot col-xs-12 col-md-5 col-lg-5 order-xs-1 order-sm-1 order-md-2 order-lg-2">
-                <img class="shape_ss" src="assets/images/illustrations/diseases.svg">
+                <img class="shape_ss" src="assets/images/illustrations/new/diseases.svg">
             </div>
             <div id="DescriptionDiv2"
                 class="DescriptionDiv col-xs-12 col-md-5 col-lg-5 order-xs-2 order-sm-2 order-md-1 order-lg-1">
@@ -182,7 +173,7 @@
         <!-- Section IV: Providing the perfect environment for your pets is a hassle? -->
         <div class="spots row justify-content-md-center mb-5">
             <div id="spot4" class="spot col-xs-12 col-md-5 col-lg-5">
-                <img class="shape_ss" src="assets/images/illustrations/newbie_keeper_edited_thinner.svg">
+                <img class="shape_ss" src="assets/images/illustrations/new/newbie.svg">
             </div>
             <div class="DescriptionDiv col-xs-12 col-md-5 col-lg-5">
                 <h3 class="TitleThree">Providing the perfect environment for your pets is a hassle?</h3>
@@ -210,7 +201,7 @@
                 <div class="pricing-table-wrapper">
                     <ul class="pricing-table">
                         <li class="pricing-table__item">
-                            <img src="assets/images/screenshots/loginpage.png" alt="" class="app_ss" />
+                            <img src="assets/images/screenshots/loginpage_resized.png" alt="" class="app_ss" />
                         </li>
                         <li class="pricing-table__item">
                             <img src="assets/images/screenshots/homepage.png" alt="" class="app_ss" />
@@ -502,7 +493,7 @@
                                         id="emailInput" placeholder="Enter your email*" required>
                                 </fieldset>
                                 <fieldset class="form-group">
-                                    <select class="formElement" id="p_variation" onchange="updateImage()" required>
+                                    <select class="formElement" id="p_variation" style="width: 255px; height: 30px;" onchange="updateImage()" required>
                                         <option value="">Select your StayrAI</option>
                                         <option value="Rein">Rein - Hobbyists</option>
                                         <option value="Unicorn">Unicorn - Enthusiasts</option>
@@ -556,7 +547,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg">
+                        <div class="col-lg" style="text-align: center;">
                             <img id="submitImage" class="middleIllustration"
                                 src="assets/images/logos/rein_main_cropped.png" />
                         </div>

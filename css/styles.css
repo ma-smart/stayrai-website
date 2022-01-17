@@ -14,7 +14,7 @@
 
 div.spot,
 div#spot1 {
-    background-image: url(../assets/images/shapes/shape1_mixed.svg);
+    background-image: url(../assets/images/shapes/shape1_light.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -22,7 +22,7 @@ div#spot1 {
 }
 
 div#spot2 {
-    background-image: url(../assets/images/shapes/shape2_mixed.svg);
+    background-image: url(../assets/images/shapes/shape2_light.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -30,7 +30,7 @@ div#spot2 {
 }
 
 div#spot3 {
-    background-image: url(../assets/images/shapes/shape3_mixed.svg);
+    background-image: url(../assets/images/shapes/shape3_light.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -38,7 +38,7 @@ div#spot3 {
 }
 
 div#spot4 {
-    background-image: url(../assets/images/shapes/shape4_mixed.svg);
+    background-image: url(../assets/images/shapes/shape4_light.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -46,7 +46,7 @@ div#spot4 {
 }
 
 div#spot5 {
-    background-image: url(../assets/images/shapes/shape5_mixed.svg);
+    background-image: url(../assets/images/shapes/shape5_light.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -431,10 +431,10 @@ div#spot5 {
 }
 
 .middleIllustration {
-    /* width: 165px;
-    height: auto; */
-    max-width: 40%;
-    max-height: 40%;
+    max-width: 60%;
+    max-height: 60%;
+    width: 50%;
+    height: 50%;
 }
 
 #reserve_now .row {

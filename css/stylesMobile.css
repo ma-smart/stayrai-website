@@ -350,13 +350,6 @@
         width: 100%;
     }
 
-    .pricing-table-wrapper {
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        margin-bottom: 12rem;
-    }
-
     .TitleOne,
     .TitleTwo,
     .TitleThree {
@@ -397,33 +390,6 @@
 
     .generatedTable {
         width: 50%;
-    }
-
-    .pricing-table__img {
-        margin: 20px auto 0px;
-        width: 100%;
-        max-width: 100px;
-        height: 30%;
-    }
-
-    .pricing-table__title {
-        font-size: 1.5em;
-    }
-
-    .pricing-table__tagline {
-        font-size: small;
-    }
-
-    .pricing-table__price {
-        font-size: medium;
-    }
-
-    .pricing-table__feature {
-        font-size: small;
-    }
-
-    .pricing-table__button {
-        font-size: 2rem;
     }
 
     .checkmark {
@@ -497,10 +463,7 @@
         margin-bottom: 3.5rem;
     }
 
-    .divIllustration
-
-    /* .middleIllustration { */
-        {
+    .divIllustration {
         display: none;
     }
 
@@ -524,12 +487,12 @@
         margin-bottom: 2rem;
     }
 
-    .middleIllustration {
+    /* .middleIllustration {
         width: 17rem;
         height: auto;
         margin: auto;
         text-align: center;
-    }
+    } */
 
     .formrow1 {
         order: 1;
@@ -541,16 +504,6 @@
 @media(max-width:600px) {
     .table1 {
         overflow-x: auto;
-    }
-
-    table.GeneratedTable {
-        width: 760px;
-    }
-
-    .pricing-table__img {
-        margin: 0em auto 0em;
-        width: 50%;
-        height: 8%;
     }
 }
 
@@ -607,10 +560,10 @@
 }
 
 @media(max-width:1600px) {
-    .middleIllustration {
+    /* .middleIllustration {
         padding: 2em;
         width: 50%;
-    }
+    } */
 
     .features {
         margin-top: 200px;

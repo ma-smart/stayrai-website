@@ -8,11 +8,11 @@
     }
 
     .mainTitle {
-        color: black;
+        color: white;
     }
 
     .mainDescription {
-        color: black;
+        color: white;
     }
 
     .downloadBtns {
@@ -34,11 +34,11 @@
     }
 
     .mainTitle {
-        color: black;
+        color: white;
     }
 
     .mainDescription {
-        color: black;
+        color: white;
     }
 
     .downloadBtns {
@@ -60,11 +60,11 @@
     }
 
     .mainTitle {
-        color: black;
+        color: white;
     }
 
     .mainDescription {
-        color: black;
+        color: white;
     }
 
     .downloadBtns {
@@ -86,11 +86,11 @@
     }
 
     .mainTitle {
-        color: black;
+        color: white;
     }
 
     .mainDescription {
-        color: black;
+        color: white;
     }
 
     .downloadBtns {
@@ -112,11 +112,11 @@
     }
 
     .mainTitle {
-        color: black;
+        color: white;
     }
 
     .mainDescription {
-        color: black;
+        color: white;
     }
 
     .downloadBtns {
@@ -138,11 +138,11 @@
     }
 
     .mainTitle {
-        color: black;
+        color: white;
     }
 
     .mainDescription {
-        color: black;
+        color: white;
     }
 
     .downloadBtns {
@@ -164,11 +164,11 @@
     }
 
     .mainTitle {
-        color: black;
+        color: white;
     }
 
     .mainDescription {
-        color: black;
+        color: white;
     }
 
     .downloadBtns {
@@ -402,8 +402,8 @@
     .pricing-table__img {
         margin: 20px auto 0px;
         width: 100%;
-        max-width: 80px;
-        height: 0%;
+        max-width: 100px;
+        height: 30%;
     }
 
     .pricing-table__title {
@@ -429,7 +429,7 @@
     .checkmark {
         display: inline-block;
         height: 15px;
-        width: 7px;
+        width: 10px;
         border-bottom: 5px solid #78BDD5;
         border-right: 5px solid #78BDD5;
         transform: rotate(45deg);
@@ -497,8 +497,10 @@
         margin-bottom: 3.5rem;
     }
 
-    .divIllustration,
-    .middleIllustration {
+    .divIllustration
+
+    /* .middleIllustration { */
+        {
         display: none;
     }
 
@@ -547,6 +549,8 @@
 
     .pricing-table__img {
         margin: 0em auto 0em;
+        width: 50%;
+        height: 8%;
     }
 }
 
@@ -604,7 +608,8 @@
 
 @media(max-width:1600px) {
     .middleIllustration {
-        width: 14vw;
+        padding: 2em;
+        width: 50%;
     }
 
     .features {

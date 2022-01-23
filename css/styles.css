@@ -299,12 +299,19 @@ div#spot5 {
 }
 
 .imgPhone {
-    width: 150%;
+    /* width: 150%;
     height: auto;
-    border-radius: 15px;
+    border-radius: 15px; */
     /* box-shadow: 5px 0px 50px 0px rgba(84, 77, 77, 0.15); */
     /* -webkit-box-shadow: 5px 0px 50px 0px rgba(84, 77, 77, 0.15); */
     /* -moz-box-shadow: 5px 0px 50px 0px rgba(84, 77, 77, 0.15); */
+    width: 100%;
+    height: auto;
+    position: absolute;
+    right: 60%;
+    top: 58px;
+    transform: translate(50%, -50%);
+    z-index: 100;
 }
 
 .downloadBtns {

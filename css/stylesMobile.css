@@ -314,10 +314,7 @@
     }
 
     .imgPhone {
-        display: block;
-        margin: 6rem auto 0 auto;
-        width: 60%;
-        height: auto;
+        visibility: hidden;
     }
 
     .spots {

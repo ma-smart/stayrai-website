@@ -1014,6 +1014,13 @@ input[type="checkbox"] {
     margin: 12px;
 }
 
+.footer-text {
+    text-align: center;
+    /* color: #868e96; */
+    font-weight: bold;
+    font-size: large;
+    font-family: Nunito, sans-serif;
+}
 
 @media screen and (max-width: 1024px) {
     .cyIwMS .team-member-img {

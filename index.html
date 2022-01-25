@@ -113,22 +113,33 @@
 
     <!-- Localize StayrAI prices -->
     <script>
-        $.getJSON("https://api.ipify.org?format=json", function (data) {
-            const ipAddress = data.ip;
-            if (ipAddress != ""){
-                $.getJSON("http://ip-api.com/json/" + ipAddress, function(data){
-                    countryName = data.country;
-                    if (countryName in countryPrices){
-                        document.getElementById("reinPriceBefore").innerHTML = countryPrices[countryName].rein_before;
-                        document.getElementById("reinPriceAfter").innerHTML = countryPrices[countryName].rein_after;
-                        document.getElementById("einhornPriceBefore").innerHTML = countryPrices[countryName].einhorn_before;
-                        document.getElementById("einhornPriceAfter").innerHTML = countryPrices[countryName].einhorn_after;
-                        document.getElementById("boesePriceBefore").innerHTML = countryPrices[countryName].boese_before;
-                        document.getElementById("boesePriceAfter").innerHTML = countryPrices[countryName].boese_after;
-                    }                 
-                });
-            }
-        });
+        try {
+            alert(navigator.geolocation);
+            $.getJSON("https://api.ipify.org?format=json", function (data) {
+                const ipAddress = data.ip;
+                if (ipAddress != "") {
+                    $.getJSON("https://ip-api.com/json/" + ipAddress, function (data) {
+                        countryName = data.country;
+                        if (countryName in countryPrices) {
+                            document.getElementById("reinPriceBefore").innerHTML = countryPrices[
+                                countryName].rein_before;
+                            document.getElementById("reinPriceAfter").innerHTML = countryPrices[
+                                countryName].rein_after;
+                            document.getElementById("einhornPriceBefore").innerHTML = countryPrices[
+                                countryName].einhorn_before;
+                            document.getElementById("einhornPriceAfter").innerHTML = countryPrices[
+                                countryName].einhorn_after;
+                            document.getElementById("boesePriceBefore").innerHTML = countryPrices[
+                                countryName].boese_before;
+                            document.getElementById("boesePriceAfter").innerHTML = countryPrices[
+                                countryName].boese_after;
+                        }
+                    });
+                }
+            });
+        } catch (e) {
+            console.log(e);
+        }
     </script>
 
     <!-- Updating encolsure images in accordance with the chosen StayrAI model -->
@@ -329,8 +340,9 @@
 
         <div class="flex-container discridiv" id="get_yours_now">
             <h2 class="middleTitle text-center">Reserve now and secure a 20% discount</h2>
-            <br/>
-            <h2 class="middleTitle text-center" style="font-size: large">Wherever you are, we will deliver to your doorstep!</h2>
+            <br />
+            <h2 class="middleTitle text-center" style="font-size: large">Wherever you are, we will deliver to your
+                doorstep!</h2>
             <div class="flex-items">
                 <table class="GeneratedTable">
                     <thead>
@@ -374,7 +386,8 @@
                     </tr>
                     <tr>
                         <td>
-                            <p class="text-center"> <span id="reinPriceBefore" class="pricing-table__price" style="text-decoration: line-through;">$540</span>
+                            <p class="text-center"> <span id="reinPriceBefore" class="pricing-table__price"
+                                    style="text-decoration: line-through;">$540</span>
                             </p>
                             <p class="text-center"> <span id="reinPriceAfter" class="pricing-table__price">$450</span>
                             </p>
@@ -434,9 +447,11 @@
                     </tr>
                     <tr>
                         <td>
-                            <p class="text-center"> <span id="einhornPriceBefore" class="pricing-table__price" style="text-decoration: line-through;">$810</span>
+                            <p class="text-center"> <span id="einhornPriceBefore" class="pricing-table__price"
+                                    style="text-decoration: line-through;">$810</span>
                             </p>
-                            <p class="text-center"> <span id="einhornPriceAfter" class="pricing-table__price">$680</span>
+                            <p class="text-center"> <span id="einhornPriceAfter"
+                                    class="pricing-table__price">$680</span>
                             </p>
                         </td>
                     </tr>
@@ -495,7 +510,8 @@
                     </tr>
                     <tr>
                         <td>
-                            <p class="text-center"> <span id="boesePriceBefore" class="pricing-table__price" style="text-decoration: line-through;">$1355</span>
+                            <p class="text-center"> <span id="boesePriceBefore" class="pricing-table__price"
+                                    style="text-decoration: line-through;">$1355</span>
                             </p>
                             <p class="text-center"> <span id="boesePriceAfter" class="pricing-table__price">$1125</span>
                             </p>
@@ -513,11 +529,12 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 col-md-8 col-lg-12 DescriptionBody" style="font-size: 1.5rem; text-align:center;">
-                    *The base prices may slightly differ by the time of delivery. But we guarantee 20% discount for reserved
+                    *The base prices may slightly differ by the time of delivery. But we guarantee 20% discount for
+                    reserved
                     units.
                 </div>
                 <div class="col-xs-12 col-md-8 col-lg-12 DescriptionBody" style="font-size: 1.5rem; text-align:center;">
-                    **Reservation does <strong>NOT</strong> involve any down payments or financial commitments. 
+                    **Reservation does <strong>NOT</strong> involve any down payments or financial commitments.
                 </div>
             </div>
         </div>

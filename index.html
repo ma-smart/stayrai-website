@@ -114,7 +114,6 @@
     <!-- Localize StayrAI prices -->
     <script>
         try {
-            alert(navigator.geolocation);
             $.getJSON("https://api.ipify.org?format=json", function (data) {
                 const ipAddress = data.ip;
                 if (ipAddress != "") {

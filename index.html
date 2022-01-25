@@ -117,8 +117,8 @@
             $.getJSON("https://api.ipify.org?format=json", function (data) {
                 const ipAddress = data.ip;
                 if (ipAddress != "") {
-                    $.getJSON("https://ip-api.com/json/" + ipAddress, function (data) {
-                        countryName = data.country;
+                    $.getJSON("https://api.ipgeolocation.io/ipgeo?apiKey=b5da9e24126240c298f217f2b898b2d3&ip=" + ipAddress, function (data) {
+                        countryName = data.country_name;
                         if (countryName in countryPrices) {
                             document.getElementById("reinPriceBefore").innerHTML = countryPrices[
                                 countryName].rein_before;

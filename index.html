@@ -94,11 +94,14 @@
 
     <!-- Display handheld device of the the same model as the user's: Applicable to view from mobile phones only -->
     <script>
-        if (navigator.userAgent.indexOf("iPhone") !== -1) {
-            document.getElementById("androidScreenshot").style.display = "none";
-        } else if (navigator.userAgent.indexOf("Android") !== -1) {
-            document.getElementById("iPhoneScreenshot").style.display = "none";
-        }
+        document.addEventListener("DOMContentLoaded", function(){
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            if (/iPhone/i.test(userAgent)) {
+                document.getElementById("androidScreenshot").style.display = "none";
+            } else if (/android/i.test(userAgent)) {
+                document.getElementById("iPhoneScreenshot").style.display = "none";
+            }
+        });
     </script>
 
 

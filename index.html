@@ -24,11 +24,13 @@
     <link rel="icon" type="image/png" href="assets/images/logos/logo_noback.png" />
 
     <!-- Firestore configuration to gather subscriptions -->
+    <script src="js/prices.js"></script>
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
         import { initializeAppCheck, ReCaptchaV3Provider } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app-check.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
         import { getFirestore, collection, addDoc, query, getDocs } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+        import { getRemoteConfig, getValue, fetchAndActivate } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-remote-config.js";
 
         const firebaseConfig = {
         apiKey: "AIzaSyDQ-KIpemyYallERSK03Qbvw-fugOBUhec",
@@ -46,7 +48,30 @@
             provider: new ReCaptchaV3Provider('6LcD0ekdAAAAAPwXqoDLT-JWPqPGbFk9-g8Y0Vz1'),
             isTokenAutoRefreshEnabled: true // Optional argument. If true, the SDK automatically refreshes App Check  tokens as needed.
         });
-        // const analytics = getAnalytics(app);
+        const analytics = getAnalytics(app);
+        const remoteConfig = getRemoteConfig();
+        remoteConfig.settings.minimumFetchIntervalMillis = 1; //dev test should be 3600000
+        remoteConfig.defaultConfig = ({
+            'region':"US"
+        });
+        fetchAndActivate(remoteConfig)
+            .then(async () => {
+                var regionName = await getValue(remoteConfig,"region").asString(); 
+                if (regionName in countryPrices){
+                    // Update the prices depending on the region
+                    document.getElementById("reinPriceBefore").innerHTML = countryPrices[regionName].rein_before;
+                    document.getElementById("reinPriceAfter").innerHTML = countryPrices[regionName].rein_after;
+                    document.getElementById("einhornPriceBefore").innerHTML = countryPrices[regionName].einhorn_before;
+                    document.getElementById("einhornPriceAfter").innerHTML = countryPrices[regionName].einhorn_after;
+                    document.getElementById("boesePriceBefore").innerHTML = countryPrices[regionName].boese_before;
+                    document.getElementById("boesePriceAfter").innerHTML = countryPrices[regionName].boese_after;
+                }
+            })
+            .catch((err) => {
+                alert("couldn't fetch the region, use the default config");
+                console.log(err);
+            });
+
         const db = getFirestore(app);
         
         $('#stayrai-form').submit(async function() {
@@ -92,7 +117,7 @@
 
     <!-- Display handheld device of the the same model as the user's: Applicable to view from mobile phones only -->
     <script>
-        document.addEventListener("DOMContentLoaded", function(){
+        document.addEventListener("DOMContentLoaded", function () {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
             if (/iPhone/i.test(userAgent)) {
                 document.getElementById("androidScreenshot").style.display = "none";
@@ -108,37 +133,6 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/66aa7c98b3.js" crossorigin="anonymous"></script>
     <script src="https://www.google.com/recaptcha/api.js?render=6LcD0ekdAAAAAPwXqoDLT-JWPqPGbFk9-g8Y0Vz1">
-    </script>
-    <script src="js/prices.js"></script>
-
-    <!-- Localize StayrAI prices -->
-    <script>
-        try {
-            $.getJSON("https://api.ipify.org?format=json", function (data) {
-                const ipAddress = data.ip;
-                if (ipAddress != "") {
-                    $.getJSON("https://api.ipgeolocation.io/ipgeo?apiKey=b5da9e24126240c298f217f2b898b2d3&ip=" + ipAddress, function (data) {
-                        const countryName = data.country_name;
-                        if (countryName in countryPrices) {
-                            document.getElementById("reinPriceBefore").innerHTML = countryPrices[
-                                countryName].rein_before;
-                            document.getElementById("reinPriceAfter").innerHTML = countryPrices[
-                                countryName].rein_after;
-                            document.getElementById("einhornPriceBefore").innerHTML = countryPrices[
-                                countryName].einhorn_before;
-                            document.getElementById("einhornPriceAfter").innerHTML = countryPrices[
-                                countryName].einhorn_after;
-                            document.getElementById("boesePriceBefore").innerHTML = countryPrices[
-                                countryName].boese_before;
-                            document.getElementById("boesePriceAfter").innerHTML = countryPrices[
-                                countryName].boese_after;
-                        }
-                    });
-                }
-            });
-        } catch (e) {
-            console.log(e);
-        }
     </script>
 
     <!-- Updating encolsure images in accordance with the chosen StayrAI model -->

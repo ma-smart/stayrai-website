@@ -29,6 +29,7 @@
         import { initializeAppCheck, ReCaptchaV3Provider } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app-check.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
         import { getFirestore, collection, addDoc, query, getDocs } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+        import { getRemoteConfig, getValue, fetchAndActivate } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-remote-config.js";
 
         const firebaseConfig = {
         apiKey: "AIzaSyDQ-KIpemyYallERSK03Qbvw-fugOBUhec",
@@ -46,7 +47,19 @@
             provider: new ReCaptchaV3Provider('6LcD0ekdAAAAAPwXqoDLT-JWPqPGbFk9-g8Y0Vz1'),
             isTokenAutoRefreshEnabled: true // Optional argument. If true, the SDK automatically refreshes App Check  tokens as needed.
         });
-        // const analytics = getAnalytics(app);
+        const analytics = getAnalytics(app);
+        const remoteConfig = getRemoteConfig();
+        remoteConfig.settings.minimumFetchIntervalMillis = 1; //dev test should be 3600000
+        remoteConfig.defaultConfig = ({
+            'region':"US"
+        });
+        fetchAndActivate(remoteConfig)
+            .then(() => {
+                alert(getValue(remoteConfig,"region").asString());
+            })
+            .catch((err) => {
+                alert("couldn't fetch the region, use the default config")
+            });
         const db = getFirestore(app);
         
         $('#stayrai-form').submit(async function() {

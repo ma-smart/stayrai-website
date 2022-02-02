@@ -167,6 +167,29 @@
             });
         });
     </script>
+    <script>
+        window.ChatraSetup = {
+            zIndex: 999,
+            colors: {
+                buttonText: '#fff', /* chat button text color */
+                buttonBg: '#78BDD5'    /* chat button background color */
+            }
+        };
+    </script>
+    <!-- Chatra {literal} -->
+    <script>
+        (function(d, w, c) {
+            w.ChatraID = '9yQNKSn9vempRTL7s';
+            var s = d.createElement('script');
+            w[c] = w[c] || function() {
+                (w[c].q = w[c].q || []).push(arguments);
+            };
+            s.async = true;
+            s.src = 'https://call.chatra.io/chatra.js';
+            if (d.head) d.head.appendChild(s);
+        })(document, window, 'Chatra');
+    </script>
+    <!-- /Chatra {/literal} -->
 
 </head>
 
@@ -678,6 +701,6 @@
             </div>
             <br/>
         </div>
-</body>
+    </body>
 
 </html>

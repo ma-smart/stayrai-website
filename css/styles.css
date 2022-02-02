@@ -1,3 +1,7 @@
+.grecaptcha-badge { 
+    visibility: hidden;
+}
+
 .flex-container {
     display: flex;
     flex-direction: row;

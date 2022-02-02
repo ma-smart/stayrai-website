@@ -18,14 +18,26 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/stylesMobile.css">
+    <link rel="stylesheet" href="css/cookie-consent.css" />
+
 
     <meta http-equiv="Cache-Control" content="max-age=18000, must-revalidate" />
 
     <link rel="icon" type="image/png" href="assets/images/logos/logo_noback.png" />
 
+    <!-- Cookie Consent -->
+    <script src="js/privacy-policy.js"></script>
+    <script src="js/cookie-consent.js"></script>
+    <script>
+        var cookieConsent = new CookieConsent({
+            privacyPolicyUrl: "/privacy-policy.html"
+        });
+    </script>
+
+
     <!-- Firestore configuration to gather subscriptions -->
     <script src="js/prices.js"></script>
-    <script type="module">
+    <script type="module" cookie-consent="functionality">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
         import { initializeAppCheck, ReCaptchaV3Provider } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app-check.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
@@ -71,7 +83,7 @@
                 alert("couldn't fetch the region, use the default config");
                 console.log(err);
             });
-
+    
         const db = getFirestore(app);
         
         $('#stayrai-form').submit(async function() {
@@ -103,20 +115,21 @@
         });
     </script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MYJ7DLVG6C"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MYJ7DLVG6C" cookie-consent="tracking"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
+        if (cookieConsent.trackingAllowed()) {
+            window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'G-MYJ7DLVG6C');
         }
-        gtag('js', new Date());
-
-        gtag('config', 'G-MYJ7DLVG6C');
     </script>
 
     <!-- Display handheld device of the the same model as the user's: Applicable to view from mobile phones only -->
-    <script>
+    <script cookie-consent="targeting">
         document.addEventListener("DOMContentLoaded", function () {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
             if (/iPhone/i.test(userAgent)) {
@@ -521,7 +534,7 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" style="font-family: Nunito; font-size: large;"
-                                        id="exampleModalLabel">StayrAI says...</h5>
+                                        id="privacyPolicyModalLabel">StayrAI says...</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
@@ -536,13 +549,14 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Error Modal -->
                     <div class="modal fade" id="errorModal" tabindex="-1" role="dialog"
                         aria-labelledby="errorModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" style="font-family: Nunito; font-size: large;"
-                                        id="exampleModalLabel">StayrAI says...</h5>
+                                        id="errorModalLabel">StayrAI says...</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
@@ -558,6 +572,32 @@
                         </div>
                     </div>
                 </div>
+                <!-- Privacy Policy Modal -->
+                <div class="modal fade" id="privacyPolicyModal" tabindex="-1" role="dialog"
+                    aria-labelledby="privacyPolicyModalTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="privacyPolicyModalTitle">StayrAI's Privacy Policy</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div id="policyText" class="modal-body" style="height: 80vh; overflow-y: auto; overflow-x: auto;">
+                                <!-- Policy text goes here-->
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-info btn-lg" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Privacy Policy Modal -->
+                <script>
+                    document.getElementById("policyText").innerHTML = policyText;
+                </script>
+
+
                 <div class="col-lg" style="text-align: center;">
                     <img id="submitImage" class="middleIllustration" src="assets/images/logos/rein_main_cropped.png" />
                 </div>
@@ -628,9 +668,15 @@
                             <a href="https://discord.gg/xr7DtgRn" target="blank"><i class="fab fa-discord"></i></a>
                         </li>
                     </ul>
-
                 </div>
             </div>
+            <div class="container text-center">
+                <span>
+                    <a href="javascript:cookieConsent.reset()" class="cookieLink">Cookie settings | </a>  
+                    <a href="#" data-toggle="modal" data-target="#privacyPolicyModal" class="cookieLink">Privacy policy</a>
+                </span>
+            </div>
+            <br/>
         </div>
 </body>
 

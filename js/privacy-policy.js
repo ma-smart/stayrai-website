@@ -1,6 +1,6 @@
 var policyText = `<div class=""container-lg features "">
     <h1>Privacy Policy</h1>
-    <p>Last updated: February 01, 2022</p>
+    <p>Last updated: February 03, 2022</p>
     <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your
         information when You use the Service and tells You about Your privacy rights and how the law protects You.
     </p>
@@ -31,7 +31,7 @@ var policyText = `<div class=""container-lg features "">
                 uses.</p>
         </li>
         <li>
-            <p><strong>Country</strong> refers to: Bayern, Germany</p>
+            <p><strong>Country</strong> refers to: Germany</p>
         </li>
         <li>
             <p><strong>Device</strong> means any device that can access the Service such as a computer, a cellphone
@@ -69,7 +69,7 @@ var policyText = `<div class=""container-lg features "">
     <h2>Types of Data Collected</h2>
     <h3>Personal Data</h3>
     <p>While using Our Service, We may ask You to provide Us with certain personally identifiable information that
-        can be used to contact or identify You. Personally identifiable information may include, but is not limited
+        will only be used to contact You. Personally identifiable information may include, but is not limited
         to:</p>
     <ul>
         <li>
@@ -102,7 +102,7 @@ var policyText = `<div class=""container-lg features "">
             instruct Your browser to refuse all Cookies or to indicate when a Cookie is being sent. However, if You
             do not accept Cookies, You may not be able to use some parts of our Service. Unless you have adjusted
             Your browser setting so that it will refuse Cookies, our Service may use Cookies.</li>
-        <li><strong>Flash Cookies.</strong> Certain features of our Service may use local stored objects (or Flash
+        <!--<li><strong>Flash Cookies.</strong> Certain features of our Service may use local stored objects (or Flash
             Cookies) to collect and store information about Your preferences or Your activity on our Service. Flash
             Cookies are not managed by the same browser settings as those used for Browser Cookies. For more
             information on how You can delete Flash Cookies, please read &quot;Where can I change the settings for
@@ -115,7 +115,7 @@ var policyText = `<div class=""container-lg features "">
             electronic files known as web beacons (also referred to as clear gifs, pixel tags, and single-pixel
             gifs) that permit the Company, for example, to count users who have visited those pages or opened an
             email and for other related website statistics (for example, recording the popularity of a certain
-            section and verifying system and server integrity).</li>
+            section and verifying system and server integrity).</li>-->
     </ul>
     <p>Cookies can be &quot;Persistent&quot; or &quot;Session&quot; Cookies. Persistent Cookies remain on Your
         personal computer or mobile device when You go offline, while Session Cookies are deleted as soon as You
@@ -144,7 +144,7 @@ var policyText = `<div class=""container-lg features "">
             <p>Type: Persistent Cookies</p>
             <p>Administered by: Us</p>
             <p>Purpose: These Cookies allow us to remember choices You make when You use the Website, such as
-                remembering your login details or language preference. The purpose of these Cookies is to provide
+                remembering your login details, localized currencies, or language preference. The purpose of these Cookies is to provide
                 You with a more personal experience and to avoid You having to re-enter your preferences every time
                 You use the Website.</p>
         </li>
@@ -154,7 +154,7 @@ var policyText = `<div class=""container-lg features "">
     <h2>Use of Your Personal Data</h2>
     <p>The Company may use Personal Data for the following purposes:</p>
     <ul>
-        <li>
+        <!--<li>
             <p><strong>To provide and maintain our Service</strong>, including to monitor the usage of our Service.
             </p>
         </li>
@@ -167,7 +167,7 @@ var policyText = `<div class=""container-lg features "">
             <p><strong>For the performance of a contract:</strong> the development, compliance and undertaking of
                 the purchase contract for the products, items or services You have purchased or of any other
                 contract with Us through the Service.</p>
-        </li>
+        </li>-->
         <li>
             <p><strong>To contact You:</strong> To contact You by email, telephone calls, SMS, or other equivalent
                 forms of electronic communication, such as a mobile application's push notifications regarding
@@ -182,12 +182,12 @@ var policyText = `<div class=""container-lg features "">
         <li>
             <p><strong>To manage Your requests:</strong> To attend and manage Your requests to Us.</p>
         </li>
-        <li>
+        <!--<li>
             <p><strong>For business transfers:</strong> We may use Your information to evaluate or conduct a merger,
                 divestiture, restructuring, reorganization, dissolution, or other sale or transfer of some or all of
                 Our assets, whether as a going concern or as part of bankruptcy, liquidation, or similar proceeding,
                 in which Personal Data held by Us about our Service users is among the assets transferred.</p>
-        </li>
+        </li>-->
         <li>
             <p><strong>For other purposes</strong>: We may use Your information for other purposes, such as data
                 analysis, identifying usage trends, determining the effectiveness of our promotional campaigns and

@@ -1,4 +1,4 @@
-.grecaptcha-badge { 
+.grecaptcha-badge {
     visibility: hidden;
 }
 
@@ -1135,11 +1135,11 @@ input[type="checkbox"] {
 
 }
 
-#cookieBtn {
+.scrollableBtn {
     display: block;
     position: fixed;
     bottom: 20px;
-    left: 30px;
+    right: 30px;
     z-index: 99;
     font-size: 18px;
     border: none;
@@ -1151,7 +1151,7 @@ input[type="checkbox"] {
     border-radius: 4px;
 }
 
-#cookieBtn:hover {
+.scrollableBtn:hover {
     background-color: #EBFAFF;
     border: 1px solid #78BDD5;
     color: black;
@@ -1174,3 +1174,9 @@ input[type="checkbox"] {
     width: 100%;
     height: 100%;
 }
+
+/* #chatra:not(.chatra--expanded) {
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none;
+} */

@@ -397,6 +397,13 @@ div#spot5 {
     font-size: 2.5rem;
 }
 
+.Disclaimer {
+    line-height: 2.5rem;
+    color: black;
+    font-family: Nunito, sans-serif;
+    font-size: 2.5rem;
+}
+
 .DescriptionTwo {
     line-height: 3.6rem;
     color: black;

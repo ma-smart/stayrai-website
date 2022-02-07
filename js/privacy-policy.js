@@ -194,7 +194,7 @@ var policyText = `<div class=""container-lg features "">
                 to evaluate and improve our Service, products, services, marketing and your experience.</p>
         </li>
     </ul>
-    <p>We may share Your personal information in the following situations:</p>
+    <!--<p>We may share Your personal information in the following situations:</p>
     <ul>
         <li><strong>With Service Providers:</strong> We may share Your personal information with Service Providers
             to monitor and analyze the use of our Service, to contact You.</li>
@@ -212,7 +212,9 @@ var policyText = `<div class=""container-lg features "">
             distributed outside.</li>
         <li><strong>With Your consent</strong>: We may disclose Your personal information for any other purpose with
             Your consent.</li>
-    </ul>
+    </ul>-->
+    <p>We are <strong>not</strong> going to share your personal information with any other entities without your consent. 
+    In the event of StayrAI being acquired by an external entity, this entity will abide by the same privacy guidelines.
     <h2>Retention of Your Personal Data</h2>
     <p>The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in this
         Privacy Policy. We will retain and use Your Personal Data to the extent necessary to comply with our legal

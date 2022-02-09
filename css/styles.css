@@ -254,7 +254,6 @@ div#spot5 {
     background: #ffffff;
 }
 
-/*ремы*/
 .navbar {
     margin-top: 1rem;
     margin-left: 2%;
@@ -263,7 +262,6 @@ div#spot5 {
     height: 7.3rem;
 }
 
-/*ремы*/
 .logo {
     width: 12rem;
     float: left;
@@ -303,12 +301,6 @@ div#spot5 {
 }
 
 .imgPhone {
-    /* width: 150%;
-    height: auto;
-    border-radius: 15px; */
-    /* box-shadow: 5px 0px 50px 0px rgba(84, 77, 77, 0.15); */
-    /* -webkit-box-shadow: 5px 0px 50px 0px rgba(84, 77, 77, 0.15); */
-    /* -moz-box-shadow: 5px 0px 50px 0px rgba(84, 77, 77, 0.15); */
     width: 100%;
     height: auto;
     position: absolute;
@@ -480,10 +472,7 @@ div#spot5 {
 }
 
 .middleIllustration {
-    /* max-width: 60%;
-    max-height: 60%; */
     width: 200px;
-    /* height: 200px; */
     padding-top: 2em;
 }
 
@@ -750,7 +739,6 @@ table.GeneratedTable {
     text-align: center;
     vertical-align: middle;
     width: 320px;
-    /* background-color: #ffffff; */
     border-collapse: collapse;
     border-width: 2px;
     border-color: #fff;
@@ -834,9 +822,6 @@ table.GeneratedTable th {
 
 .pricing-table__img {
     margin: 25px auto 0em;
-    /* width: 170px;
-    height: 100%; */
-    /* max-width: 50%; */
     max-height: 180px;
 }
 
@@ -940,24 +925,10 @@ table.GeneratedTable th {
 }
 
 .pricing-table__button {
-    /* background: var(--pricing-table-color);
-    color: #fff;
-    margin-top: auto;
-    padding: 1em 2em;
-    text-decoration: none;
-    width: 100%;
-    border-radius: 1.87em;
-    text-align: center;
-    transition: background 0.2s ease-in-out;
-    text-transform: capitalize; */
     font-family: Nunito, sans-serif;
     font-size: 2rem;
     padding: 6px 20px
 }
-
-/* .pricing-table__button:hover {
-    background-color: #EBFAFF;
-} */
 
 .pricing-table__checkbox {
     background-color: red;

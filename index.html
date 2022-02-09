@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/cookie-consent.css" />
 
     <meta http-equiv="Cache-Control" content="max-age=18000, must-revalidate" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" type="image/png" href="assets/images/logos/logo_noback.png" />
 
@@ -28,7 +29,7 @@
     <script type="module" cookie-consent="functionality">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
         import { initializeAppCheck, ReCaptchaV3Provider } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app-check.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
+        // import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
         import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
         import { getRemoteConfig, getValue, fetchAndActivate } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-remote-config.js";
 
@@ -48,7 +49,7 @@
             provider: new ReCaptchaV3Provider('6LcD0ekdAAAAAPwXqoDLT-JWPqPGbFk9-g8Y0Vz1'),
             isTokenAutoRefreshEnabled: true // Optional argument. If true, the SDK automatically refreshes App Check  tokens as needed.
         });
-        const analytics = getAnalytics(app);
+        // const analytics = getAnalytics(app);
         const remoteConfig = getRemoteConfig();
         remoteConfig.settings.minimumFetchIntervalMillis = 3600000;
         remoteConfig.defaultConfig = ({

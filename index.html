@@ -15,8 +15,9 @@
     <link rel="icon" type="image/png" href="assets/images/logos/logo_noback.png" />
 
     <!-- Cookie Consent -->
-    <script src="js/privacy-policy.js"></script>
+    <script src="js/privacy-policy.js" defer></script>
     <script src="js/cookie-consent.js"></script>
+    <script src="js/lazysizes.min.js" async></script>
     <script>
         var cookieConsent = new CookieConsent({
             privacyPolicyUrl: "/privacy-policy.html"
@@ -25,11 +26,10 @@
 
 
     <!-- Firestore configuration to gather subscriptions -->
-    <script src="js/prices.js"></script>
+    <script src="js/prices.js" defer></script>
     <script type="module" cookie-consent="functionality">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
         import { initializeAppCheck, ReCaptchaV3Provider } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app-check.js";
-        // import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
         import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
         import { getRemoteConfig, getValue, fetchAndActivate } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-remote-config.js";
 
@@ -49,7 +49,6 @@
             provider: new ReCaptchaV3Provider('6LcD0ekdAAAAAPwXqoDLT-JWPqPGbFk9-g8Y0Vz1'),
             isTokenAutoRefreshEnabled: true // Optional argument. If true, the SDK automatically refreshes App Check  tokens as needed.
         });
-        // const analytics = getAnalytics(app);
         const remoteConfig = getRemoteConfig();
         remoteConfig.settings.minimumFetchIntervalMillis = 3600000;
         remoteConfig.defaultConfig = ({
@@ -69,7 +68,6 @@
                 }
             })
             .catch((err) => {
-                alert("couldn't fetch the region, use the default config");
                 console.log(err);
             });
     
@@ -247,7 +245,7 @@
         <!-- Section II: Worried about your fish tank while travelling? -->
         <div class="spots row justify-content-md-center mb-5">
             <div id="spot2" class="spot col-xs-12 col-md-5 col-lg-5">
-                <img class="shape_ss" src="assets/images/illustrations/new/travel.svg" class="img-responsive">
+                <img class="shape_ss lazyload" src="assets/images/illustrations/new/travel.svg" defer>
             </div>
             <div class="DescriptionDiv col-xs-12 col-md-5 col-lg-5">
                 <h3 class="TitleOne">Worried about your fish tank while travelling?</h3>
@@ -260,7 +258,7 @@
         <!-- Section III: Lost your pets to diseases or missed maintenance? -->
         <div class="spots row justify-content-md-end justify-content-lg-end mb-5">
             <div id="spot3" class="spot col-xs-12 col-md-5 col-lg-5 order-xs-1 order-sm-1 order-md-2 order-lg-2">
-                <img class="shape_ss" src="assets/images/illustrations/new/diseases.svg">
+                <img class="shape_ss lazyload" src="assets/images/illustrations/new/diseases.svg" defer>
             </div>
             <div id="DescriptionDiv2"
                 class="DescriptionDiv col-xs-12 col-md-5 col-lg-5 order-xs-2 order-sm-2 order-md-1 order-lg-1">
@@ -274,7 +272,7 @@
         <!-- Section IV: Providing the perfect environment for your pets is a hassle? -->
         <div class="spots row justify-content-md-center mb-5">
             <div id="spot4" class="spot col-xs-12 col-md-5 col-lg-5">
-                <img class="shape_ss" src="assets/images/illustrations/new/newbie.svg">
+                <img class="shape_ss lazyload" src="assets/images/illustrations/new/newbie.svg" defer>
             </div>
             <div class="DescriptionDiv col-xs-12 col-md-5 col-lg-5">
                 <h3 class="TitleThree">Providing the perfect environment for your pets is a hassle?</h3>
@@ -299,10 +297,10 @@
                 </div>
                 <div class="flex-container" style="margin-top: 50px;">
                     <div id="iPhoneScreenshot" class="flex-items-mobile">
-                        <img src="assets/images/mobile/ios.webp" alt="" style="max-height:720px" />
+                        <img src="assets/images/mobile/ios.webp" alt="" style="max-height:720px" class="lazyload" defer/>
                     </div>
                     <div id="androidScreenshot" class="flex-items-mobile">
-                        <img src="assets/images/mobile/android.webp" alt="" style="max-height:720px" />
+                        <img src="assets/images/mobile/android.webp" alt="" style="max-height:720px" class="lazyload" defer/>
                     </div>
                 </div>
             </div>
@@ -321,7 +319,7 @@
                         <tr>
                             <th>
                                 <img src="assets/images/logos/rein_main_cropped.webp" alt=""
-                                    class="pricing-table__img" />
+                                    class="pricing-table__img lazyload" defer/>
                             </th>
                         </tr>
                     </thead>
@@ -382,7 +380,7 @@
                         <tr>
                             <th>
                                 <img src="assets/images/logos/unicorn_main_cropped.webp" alt=""
-                                    class="pricing-table__img" />
+                                    class="pricing-table__img lazyload" defer/>
                             </th>
                         </tr>
                     </thead>
@@ -444,7 +442,7 @@
                         <tr>
                             <th>
                                 <img src="assets/images/logos/boese_main_cropped.webp" alt=""
-                                    class="pricing-table__img" />
+                                    class="pricing-table__img lazyload" defer/>
                             </th>
                         </tr>
                     </thead>
@@ -613,7 +611,7 @@
 
 
                 <div class="col-lg" style="text-align: center;">
-                    <img id="submitImage" class="middleIllustration" src="assets/images/logos/rein_main_cropped.webp" />
+                    <img id="submitImage" class="middleIllustration lazyload" src="assets/images/logos/rein_main_cropped.webp" defer/>
                 </div>
             </div>
 
@@ -622,7 +620,7 @@
             <h2 class="middleTitle text-center">Our team</h2>
             <div class="section-images">
                 <div class="TeamMember__TeamMemberWrapper-hd36ql-0 cyIwMS section-8-item bg-0">
-                    <img class="team-member-img" src="assets/images/team/mohsen.jpeg" alt="">
+                    <img class="team-member-img lazyload" src="assets/images/team/mohsen.jpeg" alt="" defer>
                     <div class="team-member-name">Dr. Mohsen Ahmadvand</div>
                     <div class="team-member-title">Co-Founder</div>
                     <a href="https://www.linkedin.com/in/mahmadvand/" target="_blank" rel="noopener noreferrer">
@@ -630,7 +628,7 @@
                     </a>
                 </div>
                 <div class="TeamMember__TeamMemberWrapper-hd36ql-0 cyIwMS section-8-item bg-0">
-                    <img class="team-member-img" src="assets/images/team/alei.jpeg" alt="">
+                    <img class="team-member-img lazyload" src="assets/images/team/alei.jpeg" alt="" defer>
                     <div class="team-member-name">Dr. Alei Salem</div>
                     <div class="team-member-title">Co-Founder</div>
                     <a href="https://www.linkedin.com/in/alei-salem-21ab6313/" target="_blank"
@@ -652,7 +650,7 @@
             </div>
             <div class="row footer">
                 <div class="extraInfo col-xs-12 col-md-4">
-                    <img src="assets/images/logos/logo_noback.webp" style="width: 128px; height: 80px;">
+                    <img src="assets/images/logos/logo_noback.webp" style="width: 128px; height: 80px;" class="lazyload" defer>
                     <!-- <p class="footerDescription mt-3"></p> -->
                 </div>
                 <div class="col-xs-12 col-md-8">

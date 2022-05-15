@@ -19,9 +19,14 @@
     <script src="js/cookie-consent.js"></script>
     <script src="js/lazysizes.min.js" async></script>
     <script>
+        if (!sessionStorage.getItem("language")){
+            sessionStorage.setItem("language", "en-US");
+        }
         var cookieConsent = new CookieConsent({
+            lang: sessionStorage.getItem("language"),
             privacyPolicyUrl: "/privacy-policy.html"
         });
+     
     </script>
 
 
@@ -127,7 +132,6 @@
         });
     </script>
 
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -178,42 +182,57 @@
     </script>
     <!-- /Chatra {/literal} -->
 
+    <!-- Initialize and handle language changes -->
+    <script src="js/translations.js"></script>
+    <script type="text/javascript">
+        function updateLanguage(selectedLanguage){
+            sessionStorage.setItem("language", selectedLanguage);
+            cookieConsent.reset(sessionStorage.getItem("language"));
+            for (const [key, value] of Object.entries(stringTranslations)) {
+                $('#'+key).text(value[selectedLanguage]);
+            }
+            $('#nameInput').attr('placeholder', stringTranslations['reserve_unit_name'][selectedLanguage]);
+            $('#emailInput').attr('placeholder', stringTranslations['reserve_unit_email'][selectedLanguage]);
+            $('#reserve_unit_variation').text(stringTranslations['reserve_unit_variation'][selectedLanguage]);
+            $('#made_with_love').innerHTML = stringTranslations['made_with_love'][selectedLanguage];
+        }
+    </script>
 </head>
 
 <body class="background">
-    <nav class="navbar navbar-expand-lg mt-4 ml-5">
-        <div class="row">
-            <div class=" col-xs-12 col-md-1">
-            </div>
-            <div class="col-xs-12 col-md-1 mr-5">
-                <a href="#">
-                    <img class="logo" src="assets/images/logos/logo_noback.png">
-                </a>
-            </div>
-        </div>
-        <div class="row">
-            <div class=" col-xs-12 col-md-2">
-            </div>
-            <div class="col-xs-12 col-md-1 logTitle">
-                <h3 class="logoTitle">StayrAI</h3>
-            </div>
-        </div>
-    </nav>
+    <!-- <nav class="navbar navbar-expand-lg mt-4 ml-5"> -->
+    <ul class="navbar-nav nav-fill w-100">
+        <li class="nav-item">
+            <a href="#">
+                <img class="logo" src="assets/images/logos/logo_noback.png">
+            </a>
+            <a id="language_de" href="#" class="languageHeader" onclick="updateLanguage('de-DE')">Deutsch</a><a id="language_en" href="#" class="languageHeader" onclick="updateLanguage('en-US')"">English</a>
+        </li>
+        <li class="nav-item">
+            <h3 class="logoTitle">StayrAI</h3>
+        </li>
+    </ul>
+    <ul class="navbar-nav nav-fill w-100">
+        <!--  Need to align with logo -->
+        <!-- <li class="nav-item">
+            <h3 class="logoTitle">StayrAI</h3>
+        </li> -->
+    </ul>
 
     <div class="container-lg">
         <div class="header row justify-content-md-center">
             <div class="d-xs-none d-sm-none col-md-1 d-lg-none"></div>
             <div class="col-xs-12 col-md-6 col-lg-8 p-0">
                 <div class=" col-xs-12 col-md-10 col-lg-12 p-0">
-                    <h1 class="mainTitle">YOUR AQUARIUM ON AUTOPILOT.</h1>
-                    <p class="mainDescription col-xs-12 col-md-8 col-lg-10 mt-4 p-0">
+                    <h1 id="header_title" class="mainTitle"></h1>
+                    <p id="header_desc" class="mainDescription col-xs-12 col-md-8 col-lg-10 mt-4 p-0">
                         StayrAI automatically changes your aquarium's water, detects and diagnoses diseases,
                         and constantly keeps your tank's temperature, chemistry,
                         lights, and water levels in perfect ranges
                     </p>
                 </div>
                 <div class="downloadBtns">
-                    <a class="btn btn-info btn-lg" href="#get_yours_now">
+                    <a id="header_button" class="btn btn-info btn-lg" href="#get_yours_now">
                         Reserve Now</a>
                 </div>
             </div>
@@ -224,7 +243,7 @@
     </div>
     <!-- <button class="scrollableBtn" onclick="Chatra('openChat', true)">Have questions? Ask us anything!</button> -->
     <div class="container-lg features ">
-        <h2 class="middleTitle text-center">Why do you need StayrAI?</h2>
+        <h2 id="body_title" class="middleTitle text-center">Why do you need StayrAI?</h2>
         <br />
 
         <!-- Section I: Hate Water changes? -->
@@ -234,8 +253,8 @@
             </div>
             <div id="DescriptionDiv2"
                 class="DescriptionDiv col-xs-12 col-md-5 col-lg-5 order-xs-2 order-sm-2 order-md-1 order-lg-1">
-                <h3 class="TitleTwo">Hate water changes?</h3>
-                <p class="DescriptionBody col-xs-12 col-md-10 col-lg-10 p-0">Let StayrAI automatically change it for
+                <h3 id="body_1_title" class="TitleTwo">Hate water changes?</h3>
+                <p id="body_1_desc" class="DescriptionBody col-xs-12 col-md-10 col-lg-10 p-0">Let StayrAI automatically change it for
                     you whenever you want!
                 </p>
             </div>
@@ -248,8 +267,8 @@
                 <img class="shape_ss lazyload" src="assets/images/illustrations/new/travel.svg" defer>
             </div>
             <div class="DescriptionDiv col-xs-12 col-md-5 col-lg-5">
-                <h3 class="TitleOne">Worried about your fish tank while travelling?</h3>
-                <p class="DescriptionBody col-xs-12 col-md-9 col-lg-12 p-0 ">Enjoy your time out of town while StayrAI manages your aquarium and lets you check on its
+                <h3 id="body_2_title" class="TitleOne">Worried about your fish tank while travelling?</h3>
+                <p id="body_2_desc" class="DescriptionBody col-xs-12 col-md-9 col-lg-12 p-0 ">Enjoy your time out of town while StayrAI manages your aquarium and lets you check on its
                     status whenever and wherever you are.</p>
             </div>
         </div>
@@ -262,8 +281,8 @@
             </div>
             <div id="DescriptionDiv2"
                 class="DescriptionDiv col-xs-12 col-md-5 col-lg-5 order-xs-2 order-sm-2 order-md-1 order-lg-1">
-                <h3 class="TitleTwo">Lost your pets to diseases or missed maintenance?</h3>
-                <p class="DescriptionBody col-xs-12 col-md-10 col-lg-10 p-0">StayrAI uses AI to diagnose issues with
+                <h3 id="body_3_title" class="TitleTwo">Lost your pets to diseases or missed maintenance?</h3>
+                <p id="body_3_desc" class="DescriptionBody col-xs-12 col-md-10 col-lg-10 p-0">StayrAI uses AI to diagnose issues with
                     your setup and warns you in time.</p>
             </div>
         </div>
@@ -275,8 +294,8 @@
                 <img class="shape_ss lazyload" src="assets/images/illustrations/new/newbie.svg" defer>
             </div>
             <div class="DescriptionDiv col-xs-12 col-md-5 col-lg-5">
-                <h3 class="TitleThree">Providing the perfect environment for your pets is a hassle?</h3>
-                <p class="DescriptionBody col-md-12 col-lg-12 p-0">StayrAI constantly keeps your tank's temperature, chemistry,
+                <h3 id="body_4_title" class="TitleThree">Providing the perfect environment for your pets is a hassle?</h3>
+                <p id="body_4_desc" class="DescriptionBody col-md-12 col-lg-12 p-0">StayrAI constantly keeps your tank's temperature, chemistry,
                         lights, and water levels in a perfect condition for your pets.</p>
             </div>
         </div>
@@ -284,15 +303,15 @@
 
         <!-- StayrAI is Awesome -->
         <div class="container discridiv">
-            <h2 class="middleTitle text-center">StayrAI is here for you!</h2>
+            <h2 id="summary_title" class="middleTitle text-center">StayrAI is here for you!</h2>
             <div class="row justify-content-md-center mb-5">
                 <div class="col-xs-12 col-md-8 col-lg-12">
                     <ul class="DescriptionBody">
-                        <li>Super slick design</li>
-                        <li>Best hardware in the market</li>
-                        <li>State-of-the-art AI and image processing technologies</li>
-                        <li>Comes in three variations that fit your needs</li>
-                        <li>User-friendly app for Android and iOS devices</li>
+                        <li id="summary_1">Super slick design</li>
+                        <li id="summary_2">Best hardware in the market</li>
+                        <li id="summary_3">State-of-the-art AI and image processing technologies</li>
+                        <li id="summary_4">Comes in three variations that fit your needs</li>
+                        <li id="summary_5">User-friendly app for Android and iOS devices</li>
                     </ul>
                 </div>
                 <div class="flex-container" style="margin-top: 50px;">
@@ -309,9 +328,9 @@
 
 
         <div class="flex-container discridiv" id="get_yours_now">
-            <h2 class="middleTitle text-center">Reserve now and secure a 20% discount</h2>
+            <h2 id="features_title" class="middleTitle text-center">Reserve now and secure a 20% discount</h2>
             <br />
-            <h2 class="middleTitle text-center" style="font-size: large">Wherever you are, we will deliver to your
+            <h2 id="features_subtitle" class="middleTitle text-center" style="font-size: large">Wherever you are, we will deliver to your
                 doorstep!</h2>
             <div class="flex-items">
                 <table class="GeneratedTable">
@@ -327,32 +346,32 @@
                         <td>
                             <h3 class="pricing-table__title">Rein</h3>
                             <p class="pricing-table__description">
-                                <span class="pricing-table__tagline">FOR HOBBYISTS</span>
+                                <span id="features_rein_subtitle" class="pricing-table__tagline">FOR HOBBYISTS</span>
                             </p>
                         </td>
                     </tr>
                     <tr>
-                        <td class="pricing-table__feature">Automated Water Change</td>
+                        <td id="features_rein_1" class="pricing-table__feature">Automated Water Change</td>
                     </tr>
                     <tr>
-                        <td class="pricing-table__feature">App Support &amp; Notifications</td>
+                        <td id="features_rein_2" class="pricing-table__feature">App Support &amp; Notifications</td>
                     </tr>
                     <tr>
-                        <td class="pricing-table__feature">WiFi Hotspot &amp; Repeater</td>
+                        <td id="features_rein_3" class="pricing-table__feature">WiFi Hotspot &amp; Repeater</td>
                         <td>
                     </tr>
                     <tr>
-                        <td class="pricing-table__feature">Automatic Top-Off (ATO)</td>
+                        <td id="features_rein_4" class="pricing-table__feature">Automatic Top-Off (ATO)</td>
                         <td>
                     </tr>
                     <tr>
-                        <td class="pricing-table__feature">1 Dosing Pump</td>
+                        <td id="features_rein_5" class="pricing-table__feature">1 Dosing Pump</td>
                     </tr>
                     <tr>
-                        <td class="pricing-table__feature">2 Temperature Sensors</td>
+                        <td id="features_rein_6" class="pricing-table__feature">2 Temperature Sensors</td>
                     </tr>
                     <tr>
-                        <td class="pricing-table__feature">4 Smart Power Plugs</td>
+                        <td id="features_rein_7" class="pricing-table__feature">4 Smart Power Plugs</td>
                     </tr>
                     <tr>
                         <td>
@@ -366,7 +385,7 @@
                     <tr>
                         <td>
                             <p class="text-center">
-                                <a href="#reserve_now" data-name="Rein"
+                                <a id="features_rein_reserve" href="#reserve_now" data-name="Rein"
                                     class="pricing-table__button btn btn-info btn-lg">Reserve
                                     Now</a>
                             </p>
@@ -388,31 +407,31 @@
                         <td>
                             <h3 class="pricing-table__title">Einhorn</h3>
                             <p class="pricing-table__description">
-                                <span class="pricing-table__tagline">FOR ENTHUSIASTS</span>
+                                <span id="features_einhorn_subtitle" class="pricing-table__tagline">FOR ENTHUSIASTS</span>
                             </p>
                         </td>
                     </tr>
                     <tr>
-                        <td class="pricing-table__feature">Everything from Rein</td>
+                        <td id="features_einhorn_1" class="pricing-table__feature">Everything from Rein</td>
                     </tr>
                     <tr>
-                        <td class="pricing-table__feature">Cloud Access</td>
+                        <td id="features_einhorn_2" class="pricing-table__feature">Cloud Access</td>
                     </tr>
                     <tr>
-                        <td class="pricing-table__feature">pH Monitoring</td>
+                        <td id="features_einhorn_3" class="pricing-table__feature">pH Monitoring</td>
                     </tr>
                     <tr>
-                        <td class="pricing-table__feature">Photosynthetic radiation</td>
+                        <td id="features_einhorn_4" class="pricing-table__feature">Photosynthetic radiation</td>
                     </tr>
                     <tr>
-                        <td>2 Dosing Pumps</td>
+                        <td id="features_einhorn_5" class="pricing-table__feature">2 Dosing Pumps</td>
                     </tr>
                     <tr>
-                        <td class="pricing-table__feature">3 Temperature Sensors</td>
+                        <td id="features_einhorn_6" class="pricing-table__feature">3 Temperature Sensors</td>
                         <td>
                     </tr>
                     <tr>
-                        <td class="pricing-table__feature">6 Smart Power Plugs</td>
+                        <td id="features_einhorn_7" class="pricing-table__feature">6 Smart Power Plugs</td>
                         <td>
                     </tr>
                     <tr>
@@ -428,7 +447,7 @@
                     <tr>
                         <td>
                             <p class="text-center">
-                                <a href="#reserve_now" data-name="Unicorn"
+                                <a id="features_einhorn_reserve" href="#reserve_now" data-name="Unicorn"
                                     class="pricing-table__button btn btn-info btn-lg">Reserve
                                     Now</a>
                             </p>
@@ -450,32 +469,32 @@
                         <td>
                             <h3 class="pricing-table__title">Böse</h3>
                             <p class="pricing-table__description">
-                                <span class="pricing-table__tagline">FOR FISH FREAKS
+                                <span id="features_boese_subtitle" class="pricing-table__tagline">FOR FISH FREAKS
                                 </span>
                             </p>
                         </td>
                     </tr>
                     <tr>
-                        <td class="pricing-table__feature">Everything from Einhorn</td>
+                        <td id="features_boese_1" class="pricing-table__feature">Everything from Einhorn</td>
                     </tr>
                     <tr>
-                        <td class="pricing-table__feature">Camera Monitoring</td>
+                        <td id="features_boese_2" class="pricing-table__feature">Camera Monitoring</td>
                     </tr>
                     <tr>
-                        <td class="pricing-table__feature">Redox Monitoring</td>
+                        <td id="features_boese_3" class="pricing-table__feature">Redox Monitoring</td>
                     </tr>
                     <tr>
-                        <td class="pricing-table__feature">Salinity Monitoring</td>
+                        <td id="features_boese_4" class="pricing-table__feature">Salinity Monitoring</td>
                     </tr>
                     <tr>
-                        <td>4 Dosing Pumps</td>
+                        <td id="features_boese_5" class="pricing-table__feature" >4 Dosing Pumps</td>
                     </tr>
                     <tr>
-                        <td class="pricing-table__feature">4 Temperature Sensors</td>
+                        <td id="features_boese_6" class="pricing-table__feature">4 Temperature Sensors</td>
                         <td>
                     </tr>
                     <tr>
-                        <td class="pricing-table__feature">8 Smart Power Plugs</td>
+                        <td id="features_boese_7" class="pricing-table__feature">8 Smart Power Plugs</td>
                         <td>
                     </tr>
                     <tr>
@@ -490,7 +509,7 @@
                     <tr>
                         <td>
                             <p class="text-center">
-                                <a href="#reserve_now" data-name="Boese"
+                                <a id="features_boese_reserve" href="#reserve_now" data-name="Boese"
                                     class="pricing-table__button btn btn-info btn-lg">Reserve Now</a>
                             </p>
                         </td>
@@ -499,22 +518,22 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 col-md-8 col-lg-12 Disclaimer" style="font-size: 1.5rem; text-align: left; padding-left: 4em;">
-                    <sup>1</sup>The base prices may slightly differ by the time of delivery. But we guarantee 20% discount for
+                    <sup>1</sup><span id="features_disclaimer_1">The base prices may slightly differ by the time of delivery. But we guarantee 20% discount for
                     reserved
-                    units.
+                    units.</span>
                 </div>
                 <div class="col-xs-12 col-md-8 col-lg-12 Disclaimer" style="font-size: 1.5rem; text-align: left; padding-left: 4em;">
-                    <sup>2</sup>Reservation does <strong style="color: #78BDD5;">NOT</strong> involve any down payments or financial commitments.
+                    <sup>2</sup><span id="features_disclaimer_2">Reservation does <strong style="color: #78BDD5;">NOT</strong> involve any down payments or financial commitments.</span>
                 </div>
                 <div class="col-xs-12 col-md-8 col-lg-12 Disclaimer" style="font-size: 1.5rem; text-align: left; padding-left: 4em;">
-                    <sup>3</sup>The gathered data will <strong style="color: #78BDD5;">ONLY</strong> be used to contact you with updates about StayrAI's releases. 
+                    <sup>3</sup><span id="features_disclaimer_3">The gathered data will <strong style="color: #78BDD5;">ONLY</strong> be used to contact you with updates about StayrAI's releases.</span> 
                 </div>
             </div>
         </div>
 
 
         <div class="container-lg communities discridiv" id="reserve_now">
-            <h2 class="middleTitle text-center">Reserve your unit now</h2>
+            <h2 id="reserve_unit_title" class="middleTitle text-center">Reserve your unit now</h2>
             <br />
             <div class="row" style="width: 540px;">
                 <div class="col-lg">
@@ -530,14 +549,14 @@
                         <fieldset class="form-group">
                             <select class="formElement" id="p_variation" style="width: 255px; height: 30px;"
                                 onchange="updateImage()" required>
-                                <option value="">Select your StayrAI</option>
+                                <option id="reserve_unit_variation" value="">Select your StayrAI</option>
                                 <option value="Rein">Rein - Hobbyists</option>
                                 <option value="Unicorn">Einhorn - Enthusiasts</option>
                                 <option value="Boese">Böse - Fish Freak</option>
                             </select>
                         </fieldset>
                         <br />
-                        <button id="submitButton" type="submit" class="btn btn-info btn-lg">Let me
+                        <button id="submitButton" type="submit" class="btn btn-info btn-lg" style="font-family: Nunito-Light, sans-serif;">Let me
                             Know</button>
                     </form>
                     <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog"
@@ -551,11 +570,11 @@
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <div class="modal-body" style="font-family: Nunito; font-size: medium;">
+                                <div id="messageModalSuccess" class="modal-body" style="font-family: Nunito; font-size: medium;">
                                     Thank you for your interest! We will be in touch soon.
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="pricing-table__button btn btn-info btn-lg"
+                                    <button id="messageModalClose" type="button" class="pricing-table__button btn btn-info btn-lg"
                                         data-dismiss="modal">Close</button>
                                 </div>
                             </div>
@@ -573,11 +592,11 @@
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <div class="modal-body" style="font-family: Nunito; font-size: medium;">
+                                <div id="messageModalError" class="modal-body" style="font-family: Nunito; font-size: medium;">
                                     Something went wrong, unfortunately! Please try again later.
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="pricing-table__button btn btn-danger btn-lg"
+                                    <button id="errorModalClose" type="button" class="pricing-table__button btn btn-danger btn-lg"
                                         data-dismiss="modal">Close</button>
                                 </div>
                             </div>
@@ -599,14 +618,14 @@
                                 <!-- Policy text goes here-->
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-info btn-lg" data-dismiss="modal">Close</button>
+                                <button id="privacyPolicyModalClose" type="button" class="btn btn-info btn-lg" data-dismiss="modal" onclick="javascript:document.getElementById('policyText').innerHTML = policyText[sessionStorage.getItem('language')];">Close</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- End of Privacy Policy Modal -->
                 <script>
-                    document.getElementById("policyText").innerHTML = policyText;
+                    document.getElementById("policyText").innerHTML = policyText[sessionStorage.getItem("language")];
                 </script>
 
 
@@ -617,12 +636,12 @@
 
         </div>
         <div class="communities pages__Section-sc-1mfsc9f-0 hEKdsk section-7 limited">
-            <h2 class="middleTitle text-center">Our team</h2>
+            <h2 id="our_team_title" class="middleTitle text-center">Our team</h2>
             <div class="section-images">
                 <div class="TeamMember__TeamMemberWrapper-hd36ql-0 cyIwMS section-8-item bg-0">
                     <img class="team-member-img lazyload" src="assets/images/team/mohsen.jpeg" alt="" defer>
                     <div class="team-member-name">Dr. Mohsen Ahmadvand</div>
-                    <div class="team-member-title">Co-Founder</div>
+                    <div id="our_team_cofounder_1" class="team-member-title">Co-Founder</div>
                     <a href="https://www.linkedin.com/in/mahmadvand/" target="_blank" rel="noopener noreferrer">
                         <img class="team-member-social" src="assets/images/team/linkedin-blue.png" alt="">
                     </a>
@@ -630,7 +649,7 @@
                 <div class="TeamMember__TeamMemberWrapper-hd36ql-0 cyIwMS section-8-item bg-0">
                     <img class="team-member-img lazyload" src="assets/images/team/alei.jpeg" alt="" defer>
                     <div class="team-member-name">Dr. Alei Salem</div>
-                    <div class="team-member-title">Co-Founder</div>
+                    <div id="our_team_cofounder_2" class="team-member-title">Co-Founder</div>
                     <a href="https://www.linkedin.com/in/alei-salem-21ab6313/" target="_blank"
                         rel="noopener noreferrer">
                         <img class="team-member-social" src="assets/images/team/linkedin-blue.png" alt="">
@@ -638,14 +657,14 @@
                 </div>
             </div>
             <br />
-            <p class="footer-text">Made with <span role="img" style="padding-right: 0.5rem;">❤️</span> in Munich,
+            <p id="made_with_love" class="footer-text">Made with <span role="img" style="padding-right: 0.5rem;">❤️</span> in Munich,
                 Germany 🇩🇪</p>
         </div>
 
         <div class="container-fluid footerBox">
             <div class="row footerGet">
                 <div class="endTitle">
-                    <p>Stay connected, stay ahead, stay relaxed ... StayrAI!</p>
+                    <p id="footer_title">Stay connected, stay ahead, stay relaxed ... StayrAI!</p>
                 </div>
             </div>
             <div class="row footer">
@@ -657,7 +676,7 @@
                     <div class="row">
                         <div class="col-xs-12 col-md-8 p-0">
                             <!-- <p class="footerTitle">News</p> -->
-                            <p class="footerDescription">Check our social media accounts for more information
+                            <p id="footer_subtitle" class="footerDescription">Check our social media accounts for more information
                                 about what is new with StayrAI!</p>
                         </div>
                     </div>
@@ -684,12 +703,15 @@
             </div>
             <div class="container text-center">
                 <span>
-                    <a href="javascript:cookieConsent.reset()" class="cookieLink">Cookie settings | </a>  
-                    <a href="#" data-toggle="modal" data-target="#privacyPolicyModal" class="cookieLink">Privacy policy</a>
+                    <a id="cookie_title" href="javascript:cookieConsent.reset(sessionStorage.getItem('language'))" class="cookieLink">Cookie settings | </a>  
+                    <a id="privacy_policy_title" href="#" data-toggle="modal" data-target="#privacyPolicyModal" class="cookieLink">Privacy policy</a>
                 </span>
             </div>
             <br/>
         </div>
+        <script>
+            updateLanguage(sessionStorage.getItem("language"));
+        </script>
     </body>
 
 </html>

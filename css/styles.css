@@ -241,7 +241,7 @@ div#spot5 {
 
 @font-face {
     font-family: Nunito-Light;
-    src: url(assets/fonts/Nunito/Nunito-Light.ttf);
+    src: url(../assets/fonts/Nunito/Nunito-Light.ttf);
 }
 
 .backgroundDownload {
@@ -269,10 +269,11 @@ div#spot5 {
 
 .logoTitle {
     color: white;
-    font-family: Nunito, sans-serif;
+    font-family: Nunito-Light, sans-serif;
     font-weight: 100;
-    font-size: 1.7rem;
+    font-size: 2rem;
     float: left;
+    margin-left: 3rem;
 }
 
 .logoDescription {
@@ -281,9 +282,29 @@ div#spot5 {
     font-size: 1.25rem;
 }
 
+.languageHeader {
+    font-family: Nunito-Light, sans-serif;
+    font-size: 1.7rem;
+    margin-top: 1rem;
+    margin-right: 3rem;
+    float: right;
+    text-decoration: solid;
+    color: white;
+}
+
+.languageHeader:hover {
+    text-decoration: underline;
+    color: black;
+}
+
 .header {
     margin-left: 8%;
 }
+
+.button {
+    font-family: Nunito-Light, sans-serif;
+}
+
 
 .mainTitle {
     margin-top: 5rem;
@@ -296,7 +317,7 @@ div#spot5 {
 .mainDescription {
     line-height: 2.8rem;
     color: white;
-    font-family: Nunito, sans-serif;
+    font-family: Nunito-Light, sans-serif;
     font-size: 2rem;
 }
 
@@ -305,14 +326,14 @@ div#spot5 {
     height: auto;
     position: absolute;
     right: 60%;
-    top: 58px;
+    top: 40px;
     transform: translate(50%, -50%);
     z-index: 100;
 }
 
 .downloadBtns {
     margin-top: 4rem;
-    font-family: Nunito, sans-serif;
+    font-family: Nunito-Light, sans-serif;
     font-style: normal;
     font-weight: 100;
 }
@@ -362,7 +383,7 @@ div#spot5 {
 .DescriptionOne {
     color: black;
     line-height: 3.6rem;
-    font-family: Nunito, sans-serif;
+    font-family: Nunito-Light, sans-serif;
     font-size: 2.5rem;
 }
 
@@ -385,21 +406,21 @@ div#spot5 {
 .DescriptionBody {
     line-height: 3.6rem;
     color: black;
-    font-family: Nunito, sans-serif;
+    font-family: Nunito-Light, sans-serif;
     font-size: 2.5rem;
 }
 
 .Disclaimer {
     line-height: 2.5rem;
     color: black;
-    font-family: Nunito, sans-serif;
+    font-family: Nunito-Light, sans-serif;
     font-size: 2.5rem;
 }
 
 .DescriptionTwo {
     line-height: 3.6rem;
     color: black;
-    font-family: Nunito, sans-serif;
+    font-family: Nunito-Light, sans-serif;
     font-size: 2.5rem;
 }
 
@@ -412,7 +433,7 @@ div#spot5 {
 .DescriptionThree {
     line-height: 3.6rem;
     color: black;
-    font-family: Nunito, sans-serif;
+    font-family: Nunito-Light, sans-serif;
     font-size: 2.5rem;
 }
 
@@ -424,7 +445,7 @@ div#spot5 {
 .endDescription {
     color: black;
     line-height: 15.6rem;
-    font-family: Nunito, sans-serif;
+    font-family: Nunito-Light, sans-serif;
     font-size: 2.9rem;
 }
 
@@ -436,7 +457,7 @@ div#spot5 {
 .middleDescription {
     line-height: 4.4rem;
     color: black;
-    font-family: Nunito, sans-serif;
+    font-family: Nunito-Light, sans-serif;
     font-size: 3.3rem;
 }
 
@@ -518,14 +539,14 @@ div#spot5 {
 .footerDescription {
     line-height: 2.9rem;
     color: black;
-    font-family: Nunito, sans-serif;
+    font-family: Nunito-Light, sans-serif;
     font-size: 2rem;
 }
 
 .footerMenuElement {
     line-height: 2.9rem;
     color: black;
-    font-family: Nunito, sans-serif;
+    font-family: Nunito-Light, sans-serif;
     font-size: 2rem;
 }
 
@@ -540,7 +561,7 @@ div#spot5 {
 }
 
 .formElement {
-    font-family: Nunito, sans-serif;
+    font-family: Nunito-Light, sans-serif;
     font-size: medium;
     color: #000;
     width: 100%;
@@ -843,7 +864,7 @@ table.GeneratedTable th {
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    font-family: Nunito, sans-serif;
+    font-family: Nunito-Light, sans-serif;
 }
 
 .pricing-table__tagline {
@@ -851,7 +872,7 @@ table.GeneratedTable th {
     font-size: medium;
     color: #000;
     text-align: center;
-    font-family: Nunito, sans-serif;
+    font-family: Nunito-Light, sans-serif;
 }
 
 .pricing-table__price {
@@ -925,7 +946,7 @@ table.GeneratedTable th {
 }
 
 .pricing-table__button {
-    font-family: Nunito, sans-serif;
+    font-family: Nunito-Light, sans-serif;
     font-size: 2rem;
     padding: 6px 20px
 }
@@ -936,6 +957,7 @@ table.GeneratedTable th {
 
 .pricing-table__feature {
     color: black;
+    font-family: Nunito-Light, sans-serif;
 }
 
 input[type="checkbox"]:disabled {
@@ -1001,7 +1023,7 @@ input[type="checkbox"] {
     /* color: #868e96; */
     font-weight: bold;
     font-size: large;
-    font-family: Nunito, sans-serif;
+    font-family: Nunito-Light, sans-serif;
 }
 
 @media screen and (max-width: 1024px) {

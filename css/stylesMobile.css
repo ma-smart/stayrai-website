@@ -249,16 +249,16 @@
         height: 6rem;
         margin-top: 2rem;
         float: left;
-        position: absolute;
+        /* position: absolute; */
     }
 
     .logoTitle {
         color: white;
-        font-family: Nunito, sans-serif;
+        font-family: Nunito-Light, sans-serif;
         font-weight: 500;
-        font-size: 3em;
+        font-size: 1.7em;
         position: left;
-        margin-top: 60px;
+        /* margin-top: 60px; */
     }
 
     .logoDescription {
@@ -290,7 +290,7 @@
         display: block;
         margin: 4rem auto 0 auto;
         text-align: center;
-        font-family: Nunito, sans-serif;
+        font-family: Nunito-Light, sans-serif;
     }
 
     .downloadBtns a {
@@ -427,7 +427,7 @@
     .footerBox p {
         font-weight: bolder;
         font-size: 2rem;
-        font-family: Nunito, sans-serif;
+        font-family: Nunito-Light, sans-serif;
     }
 
     .footerBox p a {

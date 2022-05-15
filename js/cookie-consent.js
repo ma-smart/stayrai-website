@@ -16,7 +16,7 @@
          blockAccess: false, // set "true" to block the access to the website before choosing a cookie configuration
          position: "right", // position ("left" or "right"), if blockAccess is false
          postSelectionCallback: undefined, // callback, after the user has made his selection
-         lang: navigator.language, // the language, in which the dialog is shown
+         lang: "en", // the language, in which the dialog is shown
          defaultLang: "en", // default language, if the `lang` is not available as translation in `content`
          content: { // the content in all needed languages
              de: {
@@ -60,7 +60,7 @@
      }
      const _t = self.props.content[self.lang]
     //  const linkPrivacyPolicy = '<a href="' + self.props.privacyPolicyUrl + '">' + _t.privacyPolicy + '</a>'
-     const linkPrivacyPolicy = '<a href="#" data-toggle="modal" data-target="#privacyPolicyModal">' + _t.privacyPolicy + '</a>'
+     const linkPrivacyPolicy = '<a href="#" data-toggle="modal" data-target="#privacyPolicyModal" onclick="javascript:document.getElementById(\'policyText\').innerHTML = policyText[sessionStorage.getItem(\'language\')];">' + _t.privacyPolicy + '</a>'
      let modalClass = "cookie-consent-modal"
      if (self.props.blockAccess) {
           modalClass += " block-access"
@@ -125,42 +125,81 @@
          self.modal.style.display = "none"
      }
  
-     function showDialog() {
+     function updateDialogLanguage(currentLanguage){
+        self.lang = currentLanguage;
+        if (self.lang.indexOf("-") !== -1) {
+            self.lang = self.lang.split("-")[0]
+        }
+        if (self.props.content[self.lang] === undefined) {
+            self.lang = self.props.defaultLang
+        }
+        const _t = self.props.content[self.lang]
+       //  const linkPrivacyPolicy = '<a href="' + self.props.privacyPolicyUrl + '">' + _t.privacyPolicy + '</a>'
+       const linkPrivacyPolicy = '<a href="#" data-toggle="modal" data-target="#privacyPolicyModal" onclick="javascript:document.getElementById(\'policyText\').innerHTML = policyText[sessionStorage.getItem(\'language\')];">' + _t.privacyPolicy + '</a>'
+       let modalClass = "cookie-consent-modal"
+        if (self.props.blockAccess) {
+             modalClass += " block-access"
+        }
+        self.modalContent = '<!-- cookie banner => https://github.com/shaack/cookie-consent-js -->' +
+            '<div class="' + modalClass + '">' +
+            '<div class="modal-content-wrap ' + self.props.position + '">' +
+            '<div class="modal-content">' +
+            '<div class="modal-header">--header--</div>' +
+            '<div class="modal-body">--body--</div>' +
+            '<div class="modal-footer">--footer--</div>' +
+            '</div></div><!-- end cookie-consent.js -->'
+        self.modalContent = self.modalContent.replace(/--header--/, "<h3 class=\"modal-title\">" + _t.title + "</h3>")
+        self.modalContent = self.modalContent.replace(/--body--/,
+            _t.body.replace(/--privacy-policy--/, linkPrivacyPolicy)
+        )
+        self.modalContent = self.modalContent.replace(/--footer--/,
+            "<div class='buttons'>" +
+            "<button class='btn-accept-necessary " + self.props.buttonSecondaryClass + "'>" + _t.buttonAcceptTechnical + "</button>" +
+            "<button class='btn-accept-all " + self.props.buttonPrimaryClass + "'>" + _t.buttonAcceptAll + "</button>" +
+            "</div>"
+        )
+        return self.modalContent;
+     }
+
+     function showDialog(currentLanguage) {
          documentReady(function () {
              self.modal = document.getElementById(self.props.modalId)
-             if (!self.modal) {
-                 self.modal = document.createElement("div")
-                 self.modal.id = self.props.modalId
-                 self.modal.innerHTML = self.modalContent
-                 document.body.append(self.modal)
-                 self.modal.querySelector(".btn-accept-necessary").addEventListener("click", function () {
-                     setCookie(self.props.cookieName, "false", 365)
-                     hideDialog()
-                     if(self.props.postSelectionCallback) {
-                         self.props.postSelectionCallback()
-                     }
-                 })
-                 self.modal.querySelector(".btn-accept-all").addEventListener("click", function () {
-                     setCookie(self.props.cookieName, "true", 365)
-                     hideDialog()
-                     if(self.props.postSelectionCallback) {
-                         self.props.postSelectionCallback()
-                     }
-                 })
-             } else {
-                 self.modal.style.display = "block"
+             if (self.modal) {
+                const e = document.querySelector('#'+self.modal.id);
+                e.parentElement.removeChild(e); // Delete old modal
              }
+                self.modal = document.createElement("div")
+                self.modal.id = self.props.modalId 
+                self.modal.innerHTML = updateDialogLanguage(currentLanguage)//self.modalContent // Update modal content according to current language
+                document.body.append(self.modal)
+                self.modal.querySelector(".btn-accept-necessary").addEventListener("click", function () {
+                    setCookie(self.props.cookieName, "false", 365)
+                    hideDialog()
+                    if(self.props.postSelectionCallback) {
+                        self.props.postSelectionCallback()
+                    }
+                })
+                self.modal.querySelector(".btn-accept-all").addEventListener("click", function () {
+                    setCookie(self.props.cookieName, "true", 365)
+                    hideDialog()
+                    if(self.props.postSelectionCallback) {
+                        self.props.postSelectionCallback()
+                    }
+                })
+             //} else {
+                 //self.modal.style.display = "block"
+            // }
          }.bind(this))
      }
  
      if (getCookie(self.props.cookieName) === undefined && self.props.autoShowModal) {
-         showDialog()
+         showDialog(self.lang);
      }
  
      // API
-     self.reset = function () {
+     self.reset = function (currentLanguage) {
          removeCookie(self.props.cookieName)
-         showDialog()
+         showDialog(currentLanguage)
      }
  
      self.trackingAllowed = function () {

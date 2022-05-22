@@ -19,11 +19,8 @@
     <script src="js/cookie-consent.js"></script>
     <script src="js/lazysizes.min.js" async></script>
     <script>
-        if (!sessionStorage.getItem("language")){
-            sessionStorage.setItem("language", "en-US");
-        }
         var cookieConsent = new CookieConsent({
-            lang: sessionStorage.getItem("language"),
+            lang: 'en-US',
             privacyPolicyUrl: "/privacy-policy.html"
         });
      
@@ -57,7 +54,8 @@
         const remoteConfig = getRemoteConfig();
         remoteConfig.settings.minimumFetchIntervalMillis = 3600000;
         remoteConfig.defaultConfig = ({
-            'region':"US"
+            'region': 'US',
+            'language': 'en-US'
         });
         fetchAndActivate(remoteConfig)
             .then(async () => {
@@ -71,10 +69,22 @@
                     document.getElementById("boesePriceBefore").innerHTML = countryPrices[regionName].boese_before;
                     document.getElementById("boesePriceAfter").innerHTML = countryPrices[regionName].boese_after;
                 }
+                if (!sessionStorage.getItem("language")){
+                    var languageName = await getValue(remoteConfig, "language").asString();
+                    sessionStorage.setItem("language", languageName);
+                    cookieConsent.reset(languageName);
+                    updateLanguage(languageName);
+                } else {
+                    // Handle page refreshes within the same session
+                    if (sessionStorage.getItem("language") != 'en-US'){
+                        cookieConsent.reset(sessionStorage.getItem("language"));
+                        updateLanguage(sessionStorage.getItem("language"));
+                    }
+                }
             })
             .catch((err) => {
                 console.log(err);
-            });
+            });  
     
         const db = getFirestore(app);
         
@@ -206,7 +216,7 @@
             <a href="#">
                 <img class="logo" src="assets/images/logos/logo_noback.png">
             </a>
-            <a id="language_de" href="#" class="languageHeader" onclick="updateLanguage('de-DE')">Deutsch</a><a id="language_en" href="#" class="languageHeader" onclick="updateLanguage('en-US')"">English</a>
+            <a id="language_de" href="#" class="languageHeader" onclick="updateLanguage('de-DE')">Deutsch</a><a id="language_en" href="#" class="languageHeader" onclick="updateLanguage('en-US')">English</a>
         </li>
         <li class="nav-item">
             <h3 class="logoTitle">StayrAI</h3>
@@ -224,7 +234,7 @@
             <div class="d-xs-none d-sm-none col-md-1 d-lg-none"></div>
             <div class="col-xs-12 col-md-6 col-lg-8 p-0">
                 <div class=" col-xs-12 col-md-10 col-lg-12 p-0">
-                    <h1 id="header_title" class="mainTitle"></h1>
+                    <h1 id="header_title" class="mainTitle">YOUR AQUARIUM ON AUTOPILOT.</h1>
                     <p id="header_desc" class="mainDescription col-xs-12 col-md-8 col-lg-10 mt-4 p-0">
                         StayrAI automatically changes your aquarium's water, detects and diagnoses diseases,
                         and constantly keeps your tank's temperature, chemistry,
@@ -709,9 +719,6 @@
             </div>
             <br/>
         </div>
-        <script>
-            updateLanguage(sessionStorage.getItem("language"));
-        </script>
     </body>
 
 </html>

@@ -100,7 +100,7 @@ const stringTranslations = {
     "privacyPolicyModalLabel" : {"en-US": "StayrAI says...", "de-DE": "StayrAI sagt..."},
     "privacyPolicyModalTitle" : {"en-US": "StayrAI's privacy policy", "de-DE": "StayrAIs Datenschutzbestimmungen"},
     "errorModalLabel" : {"en-US": "StayrAI says...", "de-DE": "StayrAI sagt..."},
-    "messageModalSucces": {
+    "messageModalSuccess": {
         "en-US": "Thank you for your interest! We will be in touch soon.", 
         "de-DE": "Vielen Dank für Ihr Interesse! Wir werden uns bald melden!"
     },
@@ -110,5 +110,6 @@ const stringTranslations = {
     },
     "privacyPolicyModalClose" : {"en-US": "Close", "de-DE": "Schließen"},
     "messagePolicyModalClose" : {"en-US": "Close", "de-DE": "Schließen"},
+    "messageModalClose": {"en-US": "Close", "de-DE": "Schließen"},
     "errorModalClose" : {"en-US": "Close", "de-DE": "Schließen"},
 }

@@ -71,6 +71,7 @@
                 }
                 if (!sessionStorage.getItem("language")){
                     var languageName = await getValue(remoteConfig, "language").asString();
+                    console.log(languageName);
                     sessionStorage.setItem("language", languageName);
                     cookieConsent.reset(languageName);
                     updateLanguage(languageName);
